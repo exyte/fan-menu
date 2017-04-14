@@ -1,5 +1,5 @@
 # CirculoMenu
-Simple menu with a circular layout.
+Simple menu with a circular layout based on lovely [Macaw](https://github.com/exyte/macaw).
 
 # Usage
 1. Create `UIView` in your storyboard or programatically.
