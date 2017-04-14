@@ -43,9 +43,9 @@ circleMenuView.halfMode = true
 ```swift
  circleMenuView.onButtonPressed = { button in
   switch button.id {
-   case "exchange":
+   case "exchange_id":
     print("open exchange screen")
-   case "visa":
+   case "visa_id":
     print("open cards screen")
    default:
     print("other")
