@@ -39,6 +39,19 @@ circleMenuView.duration = 0.35
 // show buttons on the half circle
 circleMenuView.halfMode = true
 ```
+6. Add handler
+```swift
+ circleMenuView.onButtonPressed = { button in
+  switch button.id {
+   case "exchange":
+    print("open exchange screen")
+   case "visa":
+    print("open cards screen")
+   default:
+    print("other")
+   }
+}
+```
 
 ## Installation
 
