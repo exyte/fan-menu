@@ -39,6 +39,8 @@ class CircleMenuView: MacawView {
         }
     }
     
+     var onButtonPressed: ((_ button: CircleMenuButton) -> ())?
+    
     func updateNode() {
         let viewSize = Size(
             w: Double(UIScreen.main.bounds.width),
@@ -89,7 +91,12 @@ class CircleMenu: Group {
         )
         
         buttonGroup = [mainCircle, menuIcon].group()
-        buttonsGroup = menuView.buttons.map { CircleMenuButtonNode(button: $0, menuView: menuView) }.group()
+        buttonsGroup = menuView.buttons.map {
+            CircleMenuButtonNode(
+                button: $0,
+                menuView: menuView
+            )
+        }.group()
         
         backgroundCircle = Shape(
             form: Circle(r: menuView.radius),
@@ -167,8 +174,7 @@ class CircleMenuButtonNode: Group {
         super.init(contents: [circle, image], opacity: 0.0)
         
         self.onTouchPressed { _ in
-            // fire event
+            menuView.onButtonPressed?(button)
         }
-
     }
 }

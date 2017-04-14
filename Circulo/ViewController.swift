@@ -40,6 +40,17 @@ class ViewController: UIViewController {
         circleMenuView.distance = 90.0
         circleMenuView.duration = 0.35
         circleMenuView.halfMode = true
+        
+        circleMenuView.onButtonPressed = { button in
+            switch button.id {
+            case "exchange":
+                print("open exchange screen")
+            case "visa":
+                print("open cards screen")
+            default:
+                print("other")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
