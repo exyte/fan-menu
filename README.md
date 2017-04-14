@@ -11,9 +11,9 @@ circleMenuView.centerButton = CircleMenuButton(
  image: "plus",
  color: Color(val: 0x7C93FE)
 )
-```swift
-4. Specify circle buttons
 ```
+4. Specify circle buttons
+```swift
 circleMenuView.buttons = [
  CircleMenuButton(
   id: "exchange_id",
