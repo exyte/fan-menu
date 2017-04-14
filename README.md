@@ -4,15 +4,16 @@ Simple menu with a circular layout.
 # Usage
 1. Create `UIView` in your storyboard or programatically.
 2. Specify `CircleMenuView` for your `UIView`.
-3. Configure menu: specify menu button, items and handler.
+3. Specify menu button
 ```
 circleMenuView.centerButton = CircleMenuButton(
  id: "main",
  image: "plus",
  color: Color(val: 0x7C93FE)
 )
-
-// circle buttons
+```
+4. Specify circle buttons
+```
 circleMenuView.buttons = [
  CircleMenuButton(
   id: "exchange_id",
@@ -26,7 +27,9 @@ circleMenuView.buttons = [
   color: Color(val: 0xF55B58)
  )
 ]
-  
+```
+5. Configure optional parameters
+```
 // distance between center button and buttons
 circleMenuView.distance = 90.0
 
