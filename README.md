@@ -28,18 +28,7 @@ circleMenuView.buttons = [
  )
 ]
 ```
-5. Configure optional parameters
-```swift
-// distance between center button and buttons
-circleMenuView.distance = 90.0
-
-// animation duration
-circleMenuView.duration = 0.35
-
-// show buttons on the half circle
-circleMenuView.halfMode = true
-```
-6. Add handler
+5. Add event handler
 ```swift
  circleMenuView.onButtonPressed = { button in
   switch button.id {
@@ -51,6 +40,17 @@ circleMenuView.halfMode = true
     print("other")
    }
 }
+```
+6. Configure optional parameters
+```swift
+// distance between center button and buttons
+circleMenuView.distance = 90.0
+
+// animation duration
+circleMenuView.duration = 0.35
+
+// show buttons on the half circle
+circleMenuView.halfMode = true
 ```
 
 ## Installation
