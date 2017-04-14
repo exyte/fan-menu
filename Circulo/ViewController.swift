@@ -8,29 +8,29 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        circleMenuView.menuItem = CircleMenuItem(
+        circleMenuView.centerButton = CircleMenuButton(
             id: "main",
             image: "plus",
             color: Color(val: 0x7C93FE)
         )
         
-        circleMenuView.items = [
-            CircleMenuItem(
+        circleMenuView.buttons = [
+            CircleMenuButton(
                 id: "exchange",
                 image: "exchange",
                 color: Color(val: 0x9F85FF)
             ),
-            CircleMenuItem(
+            CircleMenuButton(
                 id: "wallet",
                 image: "wallet",
                 color: Color(val: 0x85B1FF)
             ),
-            CircleMenuItem(
+            CircleMenuButton(
                 id: "money_box",
                 image: "money_box",
                 color: Color(val: 0xFF703B)
             ),
-            CircleMenuItem(
+            CircleMenuButton(
                 id: "visa",
                 image: "visa",
                 color: Color(val: 0xF55B58)
