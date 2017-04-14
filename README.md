@@ -5,13 +5,13 @@ Simple menu with a circular layout.
 1. Create `UIView` in your storyboard or programatically.
 2. Specify `CircleMenuView` for your `UIView`.
 3. Specify menu button
-```
+```swift
 circleMenuView.centerButton = CircleMenuButton(
  id: "main",
  image: "plus",
  color: Color(val: 0x7C93FE)
 )
-```
+```swift
 4. Specify circle buttons
 ```
 circleMenuView.buttons = [
@@ -29,7 +29,7 @@ circleMenuView.buttons = [
 ]
 ```
 5. Configure optional parameters
-```
+```swift
 // distance between center button and buttons
 circleMenuView.distance = 90.0
 
