@@ -76,3 +76,7 @@ Drop [CircleMenuView.swift](https://github.com/exyte/CirculoMenu/blob/master/Cir
 
 * iOS 8.0+ / Mac OS X 10.9+
 * Xcode 7.3+
+
+## Author
+
+This project is maintained by the [exyte](https://www.exyte.com) company, a team of experienced software engineers from the cold Siberia. We don't have bears and don't like vodka, but we love to create great applications. Just [contact us](mailto:info@exyte.com).
