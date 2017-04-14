@@ -6,24 +6,26 @@ Simple menu with a circular layout.
 2. Specify `CircleMenuView` for your `UIView`.
 3. Configure menu: specify menu button, items and handler.
 ```
- circleMenuView.menuItem = CircleMenuItem(
-  id: "main",
-  image: "plus",
-  color: Color(val: 0x7C93FE)
+// center button
+circleMenuView.menuItem = CircleMenuItem(
+ id: "main",
+ image: "plus",
+ color: Color(val: 0x7C93FE)
 )
-        
+
+// circle buttons
 circleMenuView.items = [
-  CircleMenuItem(
-    id: "exchange",
-    image: "exchange",
-    color: Color(val: 0x9F85FF)
-  ),
-  ...
-  CircleMenuItem(
-    id: "visa",
-    image: "visa",
-    color: Color(val: 0xF55B58)
-    )
+ CircleMenuItem(
+  id: "exchange",
+  image: "exchange",
+  color: Color(val: 0x9F85FF)
+ ),
+ ...
+ CircleMenuItem(
+  id: "visa",
+  image: "visa",
+  color: Color(val: 0xF55B58)
+ )
 ]
   
 // distance between center button and buttons
