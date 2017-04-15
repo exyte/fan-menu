@@ -3,7 +3,7 @@ import Macaw
 
 class CircleMenuView: MacawView {
     
-    var duration = 0.35 {
+    var duration = 0.20 {
         didSet {
             updateNode()
         }
@@ -39,8 +39,21 @@ class CircleMenuView: MacawView {
         }
     }
     
-     var onButtonPressed: ((_ button: CircleMenuButton) -> ())?
+    var onButtonPressed: ((_ button: CircleMenuButton) -> ())?
     
+    
+    func open() {
+        if let menu = self.node as? CircleMenu {
+            menu.open()
+        }
+    }
+    
+    func close() {
+        if let menu = self.node as? CircleMenu {
+            menu.close()
+        }
+    }
+
     func updateNode() {
         let viewSize = Size(
             w: Double(UIScreen.main.bounds.width),
@@ -112,13 +125,15 @@ class CircleMenu: Group {
     
     var animation: Animation?
     
-    func toggle() {
+    func close() {
         if let animationVal = self.animation {
             animationVal.reverse().play()
             self.animation = nil
             return
         }
-        
+    }
+    
+    func open() {
         let scale = menuView.distance / menuView.radius
         let backgroundAnimation = self.backgroundCircle.placeVar.animation(
             to: Transform.scale(sx: scale, sy: scale),
@@ -131,18 +146,30 @@ class CircleMenu: Group {
                 node.placeVar.animation(
                     to: self.expandPlace(index: index),
                     during: menuView.duration
-                ).easing(Easing.easeOut)
-            ].combine().delay(menuView.duration / 7 * Double(index))
-        }.combine()
+                    ).easing(Easing.easeOut)
+                ].combine().delay(menuView.duration / 7 * Double(index))
+            }.combine()
         
         // workaround
-         let imageAnimation = self.buttonGroup.opacityVar.animation(
+        let imageAnimation = self.buttonGroup.opacityVar.animation(
             to:  1.0,
             during: menuView.duration
-         )
+        )
         
         self.animation = [backgroundAnimation, expandAnimation, imageAnimation].combine()
         self.animation?.play()
+    }
+    
+    func toggle() {
+        if isOpen() {
+            close()
+        } else {
+            open()
+        }
+    }
+    
+    func isOpen() -> Bool {
+        return self.animation != nil
     }
     
     func expandPlace(index: Int) -> Transform {
@@ -168,13 +195,14 @@ class CircleMenuButtonNode: Group {
             src: button.image,
             place: Transform.move(
                 dx: -Double(uiImage.size.width) / 2,
-                dy:  -Double(uiImage.size.height) / 2
+                dy: -Double(uiImage.size.height) / 2
             )
         )
         super.init(contents: [circle, image], opacity: 0.0)
         
         self.onTouchPressed { _ in
             menuView.onButtonPressed?(button)
+            menuView.close()
         }
     }
 }

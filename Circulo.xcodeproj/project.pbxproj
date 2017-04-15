@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B03AB43E1E9E431B009B70D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03AB43D1E9E431B009B70D6 /* AppDelegate.swift */; };
-		B03AB4401E9E431B009B70D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03AB43F1E9E431B009B70D6 /* ViewController.swift */; };
 		B03AB4431E9E431B009B70D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03AB4411E9E431B009B70D6 /* Main.storyboard */; };
 		B03AB4481E9E431B009B70D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03AB4461E9E431B009B70D6 /* LaunchScreen.storyboard */; };
 		B03AB4521E9E572F009B70D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03AB4511E9E572F009B70D6 /* Assets.xcassets */; };
 		B0A8308B1EA0A7DC00E6A565 /* CircleMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8308A1EA0A7DC00E6A565 /* CircleMenuView.swift */; };
+		B0E987B11EA27AE6000B39EE /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E987B01EA27AE6000B39EE /* FinanceViewController.swift */; };
 		C50D8BB84DCDA6AB7024EAD4 /* Pods_Circulo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5485F99D697FD27FD468B3 /* Pods_Circulo.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,12 +22,12 @@
 		5E5485F99D697FD27FD468B3 /* Pods_Circulo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Circulo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03AB43A1E9E431B009B70D6 /* Circulo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circulo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03AB43D1E9E431B009B70D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B03AB43F1E9E431B009B70D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B03AB4421E9E431B009B70D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B03AB4471E9E431B009B70D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B03AB4491E9E431B009B70D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B03AB4511E9E572F009B70D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0A8308A1EA0A7DC00E6A565 /* CircleMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleMenuView.swift; sourceTree = "<group>"; };
+		B0E987B01EA27AE6000B39EE /* FinanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				B03AB43D1E9E431B009B70D6 /* AppDelegate.swift */,
-				B03AB43F1E9E431B009B70D6 /* ViewController.swift */,
 				B0A8308A1EA0A7DC00E6A565 /* CircleMenuView.swift */,
+				B0E987B01EA27AE6000B39EE /* FinanceViewController.swift */,
 				B03AB4411E9E431B009B70D6 /* Main.storyboard */,
 				B03AB4461E9E431B009B70D6 /* LaunchScreen.storyboard */,
 				B03AB4491E9E431B009B70D6 /* Info.plist */,
@@ -215,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0A8308B1EA0A7DC00E6A565 /* CircleMenuView.swift in Sources */,
-				B03AB4401E9E431B009B70D6 /* ViewController.swift in Sources */,
+				B0E987B11EA27AE6000B39EE /* FinanceViewController.swift in Sources */,
 				B03AB43E1E9E431B009B70D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
