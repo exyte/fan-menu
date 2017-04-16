@@ -168,7 +168,7 @@
                                 </constraints>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCf-SF-gja" customClass="CircleMenuView" customModule="Circulo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="477" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="487" width="375" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="l48-48-EET"/>
                                 </constraints>
@@ -181,7 +181,7 @@
                             <constraint firstAttribute="trailing" secondItem="QKh-0R-ueF" secondAttribute="trailing" id="IdT-DI-e8v"/>
                             <constraint firstItem="QKh-0R-ueF" firstAttribute="top" secondItem="GR2-MG-IFT" secondAttribute="bottom" constant="15" id="Kwx-IG-b39"/>
                             <constraint firstItem="GR2-MG-IFT" firstAttribute="centerX" secondItem="wBT-MM-xsX" secondAttribute="centerX" id="MyE-dG-3cK"/>
-                            <constraint firstItem="1jG-Lx-SVL" firstAttribute="top" secondItem="zCf-SF-gja" secondAttribute="bottom" constant="-60" id="OZY-j7-iFx"/>
+                            <constraint firstItem="1jG-Lx-SVL" firstAttribute="top" secondItem="zCf-SF-gja" secondAttribute="bottom" constant="-70" id="OZY-j7-iFx"/>
                             <constraint firstAttribute="trailing" secondItem="AIq-Yb-bwC" secondAttribute="trailing" id="WDG-0Q-pjC"/>
                             <constraint firstItem="1jG-Lx-SVL" firstAttribute="top" secondItem="QKh-0R-ueF" secondAttribute="bottom" id="Xlb-Il-w8x"/>
                             <constraint firstItem="1jG-Lx-SVL" firstAttribute="top" secondItem="AIq-Yb-bwC" secondAttribute="bottom" id="ZTU-N0-NaM"/>
