@@ -5,8 +5,8 @@ Menu with a circular layout based on lovely [Macaw](https://github.com/exyte/mac
 
 # Usage
 1. Create `UIView` in your storyboard or programatically.
-2. Specify `CircleMenuView` for your `UIView`.
-3. Specify menu button
+2. Set `CircleMenuView` as `UIView` class.
+3. Set center button
 ```swift
 circleMenuView.centerButton = CircleMenuButton(
  id: "main",
@@ -14,7 +14,7 @@ circleMenuView.centerButton = CircleMenuButton(
  color: Color(val: 0x7C93FE)
 )
 ```
-4. Specify circle buttons
+4. Set circle buttons
 ```swift
 circleMenuView.buttons = [
  CircleMenuButton(
