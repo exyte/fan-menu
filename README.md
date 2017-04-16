@@ -55,6 +55,14 @@ circleMenuView.duration = 0.35
 circleMenuView.halfMode = true
 ```
 
+## Examples
+
+1. Accounting & Financial Management
+Inspired by [Yingfang Xie](https://dribbble.com/Melodyblue).
+
+2. Color Coding Microinteraction
+Insipred by [Filippos Protogeridis](https://dribbble.com/protogeridis).
+
 ## Installation
 
 ### [CocoaPods](http://cocoapods.org)
