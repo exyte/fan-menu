@@ -65,7 +65,7 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         ]
 
         circleMenuView.distance = 90.0
-        circleMenuView.duration = 0.2
+        circleMenuView.duration = 0.35
         circleMenuView.halfMode = true
 
         circleMenuView.onButtonPressed = { button in
