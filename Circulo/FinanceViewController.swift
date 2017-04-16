@@ -1,8 +1,10 @@
 import Foundation
 import UIKit
+import Macaw
 
 class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var circleMenuView: CircleMenuView!
     @IBOutlet weak var gradienView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,6 +34,50 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradient.locations = [0.0, 0.7]
         gradienView.layer.mask = gradient
+        
+        circleMenuView.centerButton = CircleMenuButton(
+            id: "main",
+            image: "menu_plus",
+            color: Color(val: 0x7C93FE)
+        )
+
+        circleMenuView.buttons = [
+            CircleMenuButton(
+                id: "exchange",
+                image: "menu_exchange",
+                color: Color(val: 0x9F85FF)
+            ),
+            CircleMenuButton(
+                id: "wallet",
+                image: "menu_wallet",
+                color: Color(val: 0x85B1FF)
+            ),
+            CircleMenuButton(
+                id: "money_box",
+                image: "menu_money_box",
+                color: Color(val: 0xFF703B)
+            ),
+            CircleMenuButton(
+                id: "visa",
+                image: "menu_visa",
+                color: Color(val: 0xF55B58)
+            )
+        ]
+
+        circleMenuView.distance = 90.0
+        circleMenuView.duration = 0.2
+        circleMenuView.halfMode = true
+
+        circleMenuView.onButtonPressed = { button in
+            switch button.id {
+            case "exchange":
+                print("open exchange screen")
+            case "visa":
+                print("open cards screen")
+            default:
+                print("other")
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

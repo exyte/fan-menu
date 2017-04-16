@@ -55,18 +55,16 @@ class CircleMenuView: MacawView {
     }
 
     func updateNode() {
-        let viewSize = Size(
-            w: Double(UIScreen.main.bounds.width),
-            h: Double(UIScreen.main.bounds.height)
-        )
-        
         guard let centerButton = centerButton else {
             self.node = Group()
             return
         }
         
         let node = CircleMenu(centerButton: centerButton, menuView: self)
-        node.place = Transform.move(dx: viewSize.w / 2, dy: viewSize.h/2)
+        node.place = Transform.move(
+            dx: Double(self.frame.width) / 2,
+            dy: Double(self.frame.height) / 2
+        )
         self.node = node
     }
 }
