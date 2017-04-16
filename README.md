@@ -65,19 +65,19 @@ Insipred by [Filippos Protogeridis](https://dribbble.com/protogeridis).
 
 ## Installation
 
-*CocoaPods*
+**CocoaPods**
 
 ```ruby
 pod "CirculoMenu", "0.6.0"
 ```
 
-*Carthage*
+**Carthage**
 
 ```ogdl
 github "Exyte/CirculoMenu" ~> 0.6.0
 ```
 
-*Manually*
+**Manually**
 
 Drop [CircleMenuView.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/CircleMenuView.swift) in your project.
 
