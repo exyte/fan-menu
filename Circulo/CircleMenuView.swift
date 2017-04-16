@@ -78,30 +78,39 @@ struct CircleMenuButton {
 class CircleMenu: Group {
     
     let menuView: CircleMenuView
+    let centerButton: CircleMenuButton
     
     let buttonGroup: Group
     let buttonsGroup: Group
-    let menuIcon: Image
     let backgroundCircle: Node
+    
+    let menuCircle: Shape
+    let menuIcon: Image?
     
     init(centerButton: CircleMenuButton, menuView: CircleMenuView) {
         self.menuView = menuView
+        self.centerButton = centerButton
         
-        let mainCircle = Shape(
+        menuCircle = Shape(
             form: Circle(r: menuView.radius),
             fill: centerButton.color
         )
         
-        let uiImage = UIImage(named: centerButton.image)!
-        menuIcon = Image(
-            src: centerButton.image,
-            place: Transform.move(
-                dx: -Double(uiImage.size.width) / 2,
-                dy:  -Double(uiImage.size.height) / 2
-            )
-        )
+        buttonGroup = [menuCircle].group()
         
-        buttonGroup = [mainCircle, menuIcon].group()
+        if let uiImage = UIImage(named: centerButton.image) {
+            menuIcon = Image(
+                src: centerButton.image,
+                place: Transform.move(
+                    dx: -Double(uiImage.size.width) / 2,
+                    dy:  -Double(uiImage.size.height) / 2
+                )
+            )
+            buttonGroup.contents.append(menuIcon!)
+        } else {
+            menuIcon = .none
+        }
+        
         buttonsGroup = menuView.buttons.map {
             CircleMenuButtonNode(
                 button: $0,
@@ -125,6 +134,8 @@ class CircleMenu: Group {
     
     func close() {
         if let animationVal = self.animation {
+            self.menuView.onButtonPressed?(centerButton)
+            
             animationVal.reverse().play()
             self.animation = nil
             return
@@ -154,6 +165,7 @@ class CircleMenu: Group {
             during: menuView.duration
         )
         
+        self.menuView.onButtonPressed?(centerButton)
         self.animation = [backgroundAnimation, expandAnimation, imageAnimation].combine()
         self.animation?.play()
     }
@@ -180,7 +192,7 @@ class CircleMenu: Group {
     }
 }
 
-class CircleMenuButtonNode: Group {
+open class CircleMenuButtonNode: Group {
 
     init(button: CircleMenuButton, menuView: CircleMenuView) {
         let circle = Shape(
@@ -188,15 +200,18 @@ class CircleMenuButtonNode: Group {
             fill: button.color
         )
 
-        let uiImage = UIImage(named: button.image)!
-        let image = Image(
-            src: button.image,
-            place: Transform.move(
-                dx: -Double(uiImage.size.width) / 2,
-                dy: -Double(uiImage.size.height) / 2
+        var contents: [Node] = [circle]
+        if let uiImage = UIImage(named: button.image) {
+            let image = Image(
+                src: button.image,
+                place: Transform.move(
+                    dx: -Double(uiImage.size.width) / 2,
+                    dy: -Double(uiImage.size.height) / 2
+                )
             )
-        )
-        super.init(contents: [circle, image], opacity: 0.0)
+            contents.append(image)
+        }
+        super.init(contents: contents, opacity: 0.0)
         
         self.onTouchPressed { _ in
             menuView.onButtonPressed?(button)

@@ -200,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="-346.39999999999998" y="146.17691154422789"/>
         </scene>
-        <!--View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="vgT-PI-ccX">
             <objects>
-                <viewController id="U2D-hu-7X3" sceneMemberID="viewController">
+                <viewController id="U2D-hu-7X3" customClass="TaskViewController" customModule="Circulo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NZL-F9-5Oy"/>
                         <viewControllerLayoutGuide type="bottom" id="gxm-Sw-r1p"/>
@@ -342,6 +342,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0q-Fr-tlk" customClass="CircleMenuView" customModule="Circulo" customModuleProvider="target">
+                                <rect key="frame" x="220" y="211" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="0ct-sd-0m7"/>
+                                    <constraint firstAttribute="height" constant="250" id="C90-Qz-NvQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -364,6 +371,8 @@
                             <constraint firstItem="p7v-4h-8Dp" firstAttribute="leading" secondItem="pMY-NV-u2U" secondAttribute="leadingMargin" constant="19" id="bZ7-y5-f5d"/>
                             <constraint firstItem="AwO-g8-FUj" firstAttribute="leading" secondItem="pMY-NV-u2U" secondAttribute="leadingMargin" constant="19" id="erz-OZ-3WT"/>
                             <constraint firstItem="wDE-uw-10a" firstAttribute="top" secondItem="BJX-o4-UFh" secondAttribute="bottom" constant="35" id="hBg-bW-y0n"/>
+                            <constraint firstItem="U0q-Fr-tlk" firstAttribute="top" secondItem="NZL-F9-5Oy" secondAttribute="bottom" constant="191" id="n1l-Kb-IbR"/>
+                            <constraint firstAttribute="trailing" secondItem="U0q-Fr-tlk" secondAttribute="trailing" constant="-95" id="nyC-EN-Xv8"/>
                             <constraint firstItem="vUk-lL-aOn" firstAttribute="top" secondItem="NZL-F9-5Oy" secondAttribute="bottom" constant="30" id="qxd-G1-FJs"/>
                             <constraint firstItem="d6I-A7-TNu" firstAttribute="leading" secondItem="pMY-NV-u2U" secondAttribute="leadingMargin" constant="19" id="rOY-Ji-rq4"/>
                             <constraint firstItem="Hye-fJ-EtH" firstAttribute="top" secondItem="L9C-5u-Nqj" secondAttribute="bottom" constant="62" id="shR-Ol-Iql"/>
@@ -373,6 +382,10 @@
                             <constraint firstAttribute="trailing" secondItem="bNq-NG-29a" secondAttribute="trailing" id="yUG-MB-dCh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="circleMenuView" destination="U0q-Fr-tlk" id="bVR-M2-UuC"/>
+                        <outlet property="colorLabel" destination="CV0-ks-Pce" id="lY7-lF-zny"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOo-RT-cqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

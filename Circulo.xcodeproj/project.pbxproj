@@ -13,6 +13,7 @@
 		B03AB4521E9E572F009B70D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03AB4511E9E572F009B70D6 /* Assets.xcassets */; };
 		B0A8308B1EA0A7DC00E6A565 /* CircleMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8308A1EA0A7DC00E6A565 /* CircleMenuView.swift */; };
 		B0E987B11EA27AE6000B39EE /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E987B01EA27AE6000B39EE /* FinanceViewController.swift */; };
+		B0E987B31EA370E2000B39EE /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E987B21EA370E2000B39EE /* TaskViewController.swift */; };
 		C50D8BB84DCDA6AB7024EAD4 /* Pods_Circulo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5485F99D697FD27FD468B3 /* Pods_Circulo.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		B03AB4511E9E572F009B70D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0A8308A1EA0A7DC00E6A565 /* CircleMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleMenuView.swift; sourceTree = "<group>"; };
 		B0E987B01EA27AE6000B39EE /* FinanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
+		B0E987B21EA370E2000B39EE /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				B03AB43D1E9E431B009B70D6 /* AppDelegate.swift */,
 				B0A8308A1EA0A7DC00E6A565 /* CircleMenuView.swift */,
 				B0E987B01EA27AE6000B39EE /* FinanceViewController.swift */,
+				B0E987B21EA370E2000B39EE /* TaskViewController.swift */,
 				B03AB4411E9E431B009B70D6 /* Main.storyboard */,
 				B03AB4461E9E431B009B70D6 /* LaunchScreen.storyboard */,
 				B03AB4491E9E431B009B70D6 /* Info.plist */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0A8308B1EA0A7DC00E6A565 /* CircleMenuView.swift in Sources */,
+				B0E987B31EA370E2000B39EE /* TaskViewController.swift in Sources */,
 				B0E987B11EA27AE6000B39EE /* FinanceViewController.swift in Sources */,
 				B03AB43E1E9E431B009B70D6 /* AppDelegate.swift in Sources */,
 			);
