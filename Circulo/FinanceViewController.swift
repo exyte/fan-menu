@@ -3,6 +3,7 @@ import UIKit
 
 class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var gradienView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     let data = [
@@ -25,6 +26,12 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
             blue: CGFloat(242.0) / 255.0,
             alpha: 1.0
         )
+        
+        let gradient = CAGradientLayer()
+        gradient.frame = self.gradienView.bounds
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradient.locations = [0.0, 0.7]
+        gradienView.layer.mask = gradient
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

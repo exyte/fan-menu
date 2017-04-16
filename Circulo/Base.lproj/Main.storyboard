@@ -29,7 +29,7 @@
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QKh-0R-ueF">
-                                <rect key="frame" x="0.0" y="96.5" width="375" height="570.5"/>
+                                <rect key="frame" x="0.0" y="81.5" width="375" height="585"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IncomeCell" rowHeight="90" id="VVy-u1-xhk" customClass="TransactionCell" customModule="Circulo" customModuleProvider="target">
@@ -186,24 +186,35 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIq-Yb-bwC">
+                                <rect key="frame" x="0.0" y="493" width="375" height="174"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="tfh-Wa-9ls"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GR2-MG-IFT" firstAttribute="top" secondItem="ew8-NH-oek" secondAttribute="bottom" constant="25" id="7oV-h6-sWO"/>
                             <constraint firstAttribute="trailing" secondItem="QKh-0R-ueF" secondAttribute="trailing" id="IdT-DI-e8v"/>
-                            <constraint firstItem="QKh-0R-ueF" firstAttribute="top" secondItem="GR2-MG-IFT" secondAttribute="bottom" constant="30" id="Kwx-IG-b39"/>
+                            <constraint firstItem="QKh-0R-ueF" firstAttribute="top" secondItem="GR2-MG-IFT" secondAttribute="bottom" constant="15" id="Kwx-IG-b39"/>
                             <constraint firstItem="GR2-MG-IFT" firstAttribute="centerX" secondItem="wBT-MM-xsX" secondAttribute="centerX" id="MyE-dG-3cK"/>
+                            <constraint firstAttribute="trailing" secondItem="AIq-Yb-bwC" secondAttribute="trailing" id="WDG-0Q-pjC"/>
                             <constraint firstItem="1jG-Lx-SVL" firstAttribute="top" secondItem="QKh-0R-ueF" secondAttribute="bottom" id="Xlb-Il-w8x"/>
+                            <constraint firstItem="1jG-Lx-SVL" firstAttribute="top" secondItem="AIq-Yb-bwC" secondAttribute="bottom" id="ZTU-N0-NaM"/>
                             <constraint firstItem="QKh-0R-ueF" firstAttribute="leading" secondItem="wBT-MM-xsX" secondAttribute="leading" id="oUQ-ug-Hjo"/>
+                            <constraint firstItem="AIq-Yb-bwC" firstAttribute="leading" secondItem="wBT-MM-xsX" secondAttribute="leading" id="wt2-1q-jWT"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gradienView" destination="AIq-Yb-bwC" id="Aka-8K-Irh"/>
                         <outlet property="tableView" destination="QKh-0R-ueF" id="KLr-xm-dng"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shr-gV-KVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-345" y="147"/>
+            <point key="canvasLocation" x="-346.39999999999998" y="146.17691154422789"/>
         </scene>
     </scenes>
 </document>
