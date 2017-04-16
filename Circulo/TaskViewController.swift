@@ -20,10 +20,10 @@ class TaskViewController: UIViewController {
             )
         }
         
-        circleMenuView.distance = 50.0
+        circleMenuView.distance = 70.0
         circleMenuView.duration = 0.35
         circleMenuView.halfMode = true
-        circleMenuView.radius = 10.0
+        circleMenuView.radius = 15.0
         
         circleMenuView.onButtonPressed = { button in
             if button.id == "main" {

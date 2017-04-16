@@ -14,7 +14,7 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         ("income", "Part Time", "06-02", "+$100.00", "transaction_clock"),
         ("outcome", "Dinner", "06-04", "-$55.00", "transaction_dinner"),
         ("outcome", "Shopping", "06-04", "-$511.30", "transaction_shoping"),
-        ("outcome", "Travel", "07-05", "-$2800.00", "transaction_travel"),
+        ("outcome", "Travel", "07-05", "-$2800.00", "transaction_travel")
     ]
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         let gradient = CAGradientLayer()
         gradient.frame = self.gradienView.bounds
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        gradient.locations = [0.0, 0.7]
+        gradient.locations = [0.0, 1.0]
         gradienView.layer.mask = gradient
         
         circleMenuView.centerButton = CircleMenuButton(
