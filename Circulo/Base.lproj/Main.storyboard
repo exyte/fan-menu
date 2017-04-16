@@ -40,7 +40,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VVy-u1-xhk" id="0Pv-pJ-O27">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Part time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueW-CH-bTk">
@@ -104,7 +104,7 @@
                                         <rect key="frame" x="0.0" y="118" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gYg-wC-sWe" id="uMJ-lD-ZBT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Part time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FP-9j-ETk">
@@ -166,13 +166,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIq-Yb-bwC">
-                                <rect key="frame" x="0.0" y="493" width="375" height="174"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="174" id="tfh-Wa-9ls"/>
-                                </constraints>
-                            </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCf-SF-gja" customClass="CircleMenuView" customModule="Circulo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="487" width="375" height="250"/>
                                 <constraints>
@@ -191,18 +184,14 @@
                             <constraint firstItem="qqd-Bf-7Z7" firstAttribute="top" secondItem="wBT-MM-xsX" secondAttribute="top" id="OAl-RI-3W9"/>
                             <constraint firstItem="1jG-Lx-SVL" firstAttribute="top" secondItem="zCf-SF-gja" secondAttribute="bottom" constant="-70" id="OZY-j7-iFx"/>
                             <constraint firstItem="1jG-Lx-SVL" firstAttribute="top" secondItem="qqd-Bf-7Z7" secondAttribute="bottom" id="PD6-5L-yoM"/>
-                            <constraint firstAttribute="trailing" secondItem="AIq-Yb-bwC" secondAttribute="trailing" id="WDG-0Q-pjC"/>
                             <constraint firstItem="1jG-Lx-SVL" firstAttribute="top" secondItem="QKh-0R-ueF" secondAttribute="bottom" id="Xlb-Il-w8x"/>
-                            <constraint firstItem="1jG-Lx-SVL" firstAttribute="top" secondItem="AIq-Yb-bwC" secondAttribute="bottom" id="ZTU-N0-NaM"/>
                             <constraint firstAttribute="trailing" secondItem="zCf-SF-gja" secondAttribute="trailing" id="dBf-S4-Tr0"/>
                             <constraint firstItem="qqd-Bf-7Z7" firstAttribute="leading" secondItem="wBT-MM-xsX" secondAttribute="leading" id="mTP-3h-gad"/>
                             <constraint firstItem="QKh-0R-ueF" firstAttribute="leading" secondItem="wBT-MM-xsX" secondAttribute="leading" id="oUQ-ug-Hjo"/>
-                            <constraint firstItem="AIq-Yb-bwC" firstAttribute="leading" secondItem="wBT-MM-xsX" secondAttribute="leading" id="wt2-1q-jWT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="circleMenuView" destination="zCf-SF-gja" id="gzk-Bq-15N"/>
-                        <outlet property="gradienView" destination="AIq-Yb-bwC" id="Aka-8K-Irh"/>
                         <outlet property="tableView" destination="QKh-0R-ueF" id="KLr-xm-dng"/>
                     </connections>
                 </viewController>

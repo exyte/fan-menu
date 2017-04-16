@@ -5,7 +5,6 @@ import Macaw
 class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var circleMenuView: CircleMenuView!
-    @IBOutlet weak var gradienView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     let data = [
@@ -28,12 +27,6 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
             blue: CGFloat(242.0) / 255.0,
             alpha: 1.0
         )
-        
-        let gradient = CAGradientLayer()
-        gradient.frame = self.gradienView.bounds
-        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        gradient.locations = [0.0, 1.0]
-        gradienView.layer.mask = gradient
         
         circleMenuView.centerButton = CircleMenuButton(
             id: "main",
