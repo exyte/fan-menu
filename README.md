@@ -1,7 +1,7 @@
 # CirculoMenu
 Menu with a circular layout based on lovely [Macaw](https://github.com/exyte/macaw).
 
-<img src="http://i.imgur.com/ihN9FIb.gif" height="500"> <img src="http://i.imgur.com/ZHTmtcn.gif" height="500"> <img src="http://i.imgur.com/WGHTOqI.gif" height="500">
+<img src="http://i.imgur.com/ihN9FIb.gif" height="500"> <img src="http://i.imgur.com/ZHTmtcn.gif" height="500"> <img src="http://i.imgur.com/KslbTC5.gif" height="500">
 
 # Usage
 1. Create `UIView` in your storyboard or programatically.
@@ -57,14 +57,24 @@ circleMenuView.interval = (0, 2.0 * M_PI)
 
 ## Examples
 
-1. Accounting & Financial Management
-Inspired by [Yingfang Xie](https://dribbble.com/Melodyblue).
+To try CirculoMenu examples:
+- Clone the repo git@github.com:exyte/Macaw.git
+- Open terminal and run cd <CirculoMenuRepo>/
+– Run pod install to install all dependencies
+– Run open CirculoMenu.xcworkspace/ to open project in the Xcode
+– Select required controller as Initial Controller in storyboard
+– Try it!
 
-2. Color Coding Microinteraction
-Insipred by [Filippos Protogeridis](https://dribbble.com/protogeridis).
+We have next examples:
 
-3. Shop
-Inspired by [Tice](https://dribbble.com/Tice)
+- [FinanceViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/FinanceViewController.swift)
+Accounting & Financial Management. Inspired by [Yingfang Xie](https://dribbble.com/Melodyblue).
+
+- [TaskViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/TaskViewController.swift)
+Color Coding Microinteraction. Insipred by [Filippos Protogeridis](https://dribbble.com/protogeridis).
+
+– [ShopViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/ShopViewController.swift)
+Inspired by [Tice](https://dribbble.com/Tice).
 
 ## Installation
 
