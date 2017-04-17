@@ -1,7 +1,7 @@
 # CirculoMenu
 Menu with a circular layout based on lovely [Macaw](https://github.com/exyte/macaw).
 
-<img src="http://i.imgur.com/zTLTGNn.gif" height="500"> <img src="http://i.imgur.com/ZHTmtcn.gif" height="500">
+<img src="http://i.imgur.com/ihN9FIb.gif" height="500"> <img src="http://i.imgur.com/ZHTmtcn.gif" height="500"> <img src="http://i.imgur.com/WGHTOqI.gif" height="500">
 
 # Usage
 1. Create `UIView` in your storyboard or programatically.
@@ -51,8 +51,8 @@ circleMenuView.distance = 90.0
 // animation duration
 circleMenuView.duration = 0.35
 
-// show buttons on the half circle
-circleMenuView.halfMode = true
+// interval for buttons, in radians
+circleMenuView.interval = (0, 2.0 * M_PI)
 ```
 
 ## Examples
@@ -62,6 +62,9 @@ Inspired by [Yingfang Xie](https://dribbble.com/Melodyblue).
 
 2. Color Coding Microinteraction
 Insipred by [Filippos Protogeridis](https://dribbble.com/protogeridis).
+
+3. Shop
+Inspired by [Tice](https://dribbble.com/Tice)
 
 ## Installation
 
