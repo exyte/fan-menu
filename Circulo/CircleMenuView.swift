@@ -33,7 +33,7 @@ class CircleMenuView: MacawView {
         }
     }
     
-    var halfMode: Bool = false {
+    var interval: (Double, Double) = (0, 2.0 * M_PI) {
         didSet {
             updateNode()
         }
@@ -127,6 +127,7 @@ class CircleMenu: Group {
         
         buttonGroup.onTouchPressed { _ in
             self.toggle()
+            self.menuView.onButtonPressed?(centerButton)
         }
     }
     
@@ -134,8 +135,6 @@ class CircleMenu: Group {
     
     func close() {
         if let animationVal = self.animation {
-            self.menuView.onButtonPressed?(centerButton)
-            
             animationVal.reverse().play()
             self.animation = nil
             return
@@ -164,8 +163,7 @@ class CircleMenu: Group {
             to:  1.0,
             during: menuView.duration
         )
-        
-        self.menuView.onButtonPressed?(centerButton)
+
         self.animation = [backgroundAnimation, expandAnimation, imageAnimation].combine()
         self.animation?.play()
     }
@@ -184,7 +182,19 @@ class CircleMenu: Group {
     
     func expandPlace(index: Int) -> Transform {
         let size = Double(buttonsGroup.contents.count)
-        let alpha = 2 * M_PI / (menuView.halfMode ? (size - 1) * 2 : size) * Double(index) + M_PI
+        let endValue = self.menuView.interval.1
+        let startValue = self.menuView.interval.0
+        let interval = endValue - startValue
+
+        var step: Double = 0.0
+        if interval.truncatingRemainder(dividingBy: 2*M_PI) < 0.00001 {
+            // full circle
+            step = interval / size
+        } else {
+            step = interval / (size - 1)
+        }
+
+        let alpha = startValue + step * Double(index)
         return Transform.move(
             dx: cos(alpha) * menuView.distance,
             dy: sin(alpha) * menuView.distance

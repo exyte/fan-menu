@@ -22,16 +22,14 @@ class TaskViewController: UIViewController {
         
         circleMenuView.distance = 70.0
         circleMenuView.duration = 0.35
-        circleMenuView.halfMode = true
+        circleMenuView.interval = (M_PI, 2 * M_PI)
         circleMenuView.radius = 15.0
         
         circleMenuView.onButtonPressed = { button in
-            if button.id == "main" {
-                self.hideTitle()
-            } else {
+            self.hideTitle()
+            if button.id != "main" {
                 let newColor = self.colors[Int(button.id)!]
                 let circleMenu = self.circleMenuView.node as? CircleMenu
-                //circleMenu?.menuCircle.fillVar.animate(to: Color(val: newColor), during: 2.0)
                 circleMenu?.menuCircle.fill = Color(val: newColor)
             }
         }

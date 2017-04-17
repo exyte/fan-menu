@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01AB1371EA4C40A001F0009 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01AB1361EA4C40A001F0009 /* ShopViewController.swift */; };
 		B03AB43E1E9E431B009B70D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03AB43D1E9E431B009B70D6 /* AppDelegate.swift */; };
 		B03AB4431E9E431B009B70D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03AB4411E9E431B009B70D6 /* Main.storyboard */; };
 		B03AB4481E9E431B009B70D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03AB4461E9E431B009B70D6 /* LaunchScreen.storyboard */; };
@@ -21,6 +22,7 @@
 		11E3ABDEB54E8536DEF4A355 /* Pods-Circulo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Circulo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Circulo/Pods-Circulo.release.xcconfig"; sourceTree = "<group>"; };
 		46CA9206F9166BF17AB6A3FD /* Pods-Circulo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Circulo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Circulo/Pods-Circulo.debug.xcconfig"; sourceTree = "<group>"; };
 		5E5485F99D697FD27FD468B3 /* Pods_Circulo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Circulo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B01AB1361EA4C40A001F0009 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		B03AB43A1E9E431B009B70D6 /* Circulo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circulo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03AB43D1E9E431B009B70D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B03AB4421E9E431B009B70D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				B0A8308A1EA0A7DC00E6A565 /* CircleMenuView.swift */,
 				B0E987B01EA27AE6000B39EE /* FinanceViewController.swift */,
 				B0E987B21EA370E2000B39EE /* TaskViewController.swift */,
+				B01AB1361EA4C40A001F0009 /* ShopViewController.swift */,
 				B03AB4411E9E431B009B70D6 /* Main.storyboard */,
 				B03AB4461E9E431B009B70D6 /* LaunchScreen.storyboard */,
 				B03AB4491E9E431B009B70D6 /* Info.plist */,
@@ -220,6 +223,7 @@
 			files = (
 				B0A8308B1EA0A7DC00E6A565 /* CircleMenuView.swift in Sources */,
 				B0E987B31EA370E2000B39EE /* TaskViewController.swift in Sources */,
+				B01AB1371EA4C40A001F0009 /* ShopViewController.swift in Sources */,
 				B0E987B11EA27AE6000B39EE /* FinanceViewController.swift in Sources */,
 				B03AB43E1E9E431B009B70D6 /* AppDelegate.swift in Sources */,
 			);
