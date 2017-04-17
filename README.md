@@ -60,20 +60,18 @@ circleMenuView.interval = (0, 2.0 * M_PI)
 To try CirculoMenu examples:
 - Clone the repo git@github.com:exyte/Macaw.git
 - Open terminal and run cd <CirculoMenuRepo>/
-– Run pod install to install all dependencies
-– Run open CirculoMenu.xcworkspace/ to open project in the Xcode
-– Select required controller as Initial Controller in storyboard
-– Try it!
+- Run pod install to install all dependencies
+- Run open CirculoMenu.xcworkspace/ to open project in the Xcode
+- Select required controller as Initial Controller in storyboard
+- Try it!
 
 We have next examples:
 
 - [FinanceViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/FinanceViewController.swift)
 Accounting & Financial Management. Inspired by [Yingfang Xie](https://dribbble.com/Melodyblue).
-
 - [TaskViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/TaskViewController.swift)
 Color Coding Microinteraction. Insipred by [Filippos Protogeridis](https://dribbble.com/protogeridis).
-
-– [ShopViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/ShopViewController.swift)
+- [ShopViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/ShopViewController.swift)
 Inspired by [Tice](https://dribbble.com/Tice).
 
 ## Installation
