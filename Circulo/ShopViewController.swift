@@ -40,10 +40,9 @@ class ShopViewController: UIViewController {
     }
     
     func showView() {
-        let newValue = !self.topView.isHidden
-        UIView.transition(
-            with: topView, duration: 0.35, options: .transitionCrossDissolve, animations: { _ in
-                self.topView.isHidden = newValue
-        }, completion: nil)
+        let newValue: CGFloat = self.topView.alpha == 0.0 ? 1.0 : 0.0
+        UIView.animate(withDuration: 0.35, animations: {
+            self.topView.alpha = newValue
+        })
     }
 }
