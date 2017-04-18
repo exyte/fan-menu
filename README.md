@@ -81,6 +81,7 @@ Accounting & Financial Management. Inspired by [Yingfang Xie](https://dribbble.c
 Color Coding Microinteraction. Insipred by [Filippos Protogeridis](https://dribbble.com/protogeridis).
 - [ShopViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/ShopViewController.swift)
 Inspired by [Tice](https://dribbble.com/Tice).
+- [CustomViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/CustomViewController.swift) Inspired by awesome Ramotion control [circle-menu](https://github.com/Ramotion/circle-menu)
 
 ## Installation
 
