@@ -55,6 +55,14 @@ circleMenuView.duration = 0.35
 circleMenuView.interval = (0, 2.0 * M_PI)
 ```
 
+## Customization
+
+CirculoMenu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift library. Because of that CirculoMenu could be easily modified and improved for your purposes. 
+
+All source code is in one single file called CircleMenuView.swift. To modify menu simply copy this file and apply necessary changes. With CircleMenu and Macaw you could make awesome menus!
+
+<img src="http://i.imgur.com/w2OK6Db.gif" height="500">
+
 ## Examples
 
 To try CirculoMenu examples:
