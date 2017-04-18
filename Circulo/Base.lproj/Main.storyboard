@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XDC-6c-XSA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DR1-VA-A9c">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1097,6 +1097,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cy-kX-iB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1040.8" y="145.27736131934034"/>
+        </scene>
+        <!--Custom View Controller-->
+        <scene sceneID="y2f-hd-7dt">
+            <objects>
+                <viewController id="DR1-VA-A9c" customClass="CustomViewController" customModule="Circulo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="geE-z7-Fi2"/>
+                        <viewControllerLayoutGuide type="bottom" id="ayi-ea-HMa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UtW-mm-Eva">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVY-7t-aEj" customClass="CustomCircleMenuView" customModule="Circulo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kVY-7t-aEj" secondAttribute="trailing" id="UiI-PV-UGd"/>
+                            <constraint firstItem="kVY-7t-aEj" firstAttribute="leading" secondItem="UtW-mm-Eva" secondAttribute="leading" id="mhv-wp-oPi"/>
+                            <constraint firstItem="ayi-ea-HMa" firstAttribute="top" secondItem="kVY-7t-aEj" secondAttribute="bottom" id="wmu-7d-o1H"/>
+                            <constraint firstItem="kVY-7t-aEj" firstAttribute="top" secondItem="UtW-mm-Eva" secondAttribute="top" id="yFZ-YV-Qfj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="circleView" destination="kVY-7t-aEj" id="ccT-mF-Yew"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCV-HX-byl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="144.3778110944528"/>
         </scene>
     </scenes>
     <resources>

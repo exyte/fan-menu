@@ -12,6 +12,7 @@
 		B03AB4431E9E431B009B70D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03AB4411E9E431B009B70D6 /* Main.storyboard */; };
 		B03AB4481E9E431B009B70D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03AB4461E9E431B009B70D6 /* LaunchScreen.storyboard */; };
 		B03AB4521E9E572F009B70D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03AB4511E9E572F009B70D6 /* Assets.xcassets */; };
+		B0560F781EA5F9CF0071CD93 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0560F771EA5F9CF0071CD93 /* CustomViewController.swift */; };
 		B0A8308B1EA0A7DC00E6A565 /* CircleMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8308A1EA0A7DC00E6A565 /* CircleMenuView.swift */; };
 		B0E987B11EA27AE6000B39EE /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E987B01EA27AE6000B39EE /* FinanceViewController.swift */; };
 		B0E987B31EA370E2000B39EE /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E987B21EA370E2000B39EE /* TaskViewController.swift */; };
@@ -29,6 +30,7 @@
 		B03AB4471E9E431B009B70D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B03AB4491E9E431B009B70D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B03AB4511E9E572F009B70D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0560F771EA5F9CF0071CD93 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		B0A8308A1EA0A7DC00E6A565 /* CircleMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleMenuView.swift; sourceTree = "<group>"; };
 		B0E987B01EA27AE6000B39EE /* FinanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
 		B0E987B21EA370E2000B39EE /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				B0E987B01EA27AE6000B39EE /* FinanceViewController.swift */,
 				B0E987B21EA370E2000B39EE /* TaskViewController.swift */,
 				B01AB1361EA4C40A001F0009 /* ShopViewController.swift */,
+				B0560F771EA5F9CF0071CD93 /* CustomViewController.swift */,
 				B03AB4411E9E431B009B70D6 /* Main.storyboard */,
 				B03AB4461E9E431B009B70D6 /* LaunchScreen.storyboard */,
 				B03AB4491E9E431B009B70D6 /* Info.plist */,
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0A8308B1EA0A7DC00E6A565 /* CircleMenuView.swift in Sources */,
+				B0560F781EA5F9CF0071CD93 /* CustomViewController.swift in Sources */,
 				B0E987B31EA370E2000B39EE /* TaskViewController.swift in Sources */,
 				B01AB1371EA4C40A001F0009 /* ShopViewController.swift in Sources */,
 				B0E987B11EA27AE6000B39EE /* FinanceViewController.swift in Sources */,

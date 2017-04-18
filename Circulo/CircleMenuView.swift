@@ -169,15 +169,11 @@ class CircleMenu: Group {
     }
     
     func toggle() {
-        if isOpen() {
+        if self.animation != nil {
             close()
         } else {
             open()
         }
-    }
-    
-    func isOpen() -> Bool {
-        return self.animation != nil
     }
     
     func expandPlace(index: Int) -> Transform {
@@ -202,8 +198,7 @@ class CircleMenu: Group {
     }
 }
 
-open class CircleMenuButtonNode: Group {
-
+class CircleMenuButtonNode: Group {
     init(button: CircleMenuButton, menuView: CircleMenuView) {
         let circle = Shape(
             form: Circle(r: menuView.radius),
