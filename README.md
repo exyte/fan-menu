@@ -58,10 +58,10 @@ circleMenuView.interval = (0, 2.0 * M_PI)
 ## Examples
 
 To try CirculoMenu examples:
-- Clone the repo git@github.com:exyte/Macaw.git
-- Open terminal and run cd <CirculoMenuRepo>/
-- Run pod install to install all dependencies
-- Run open CirculoMenu.xcworkspace/ to open project in the Xcode
+- Clone the repo `git@github.com:exyte/Macaw.git`
+- Open terminal and run `cd <CirculoMenuRepo>/`
+- Run `pod install` to install all dependencies
+- Run open `CirculoMenu.xcworkspace/` to open project in the Xcode
 - Select required controller as Initial Controller in storyboard
 - Try it!
 
