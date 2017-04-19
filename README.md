@@ -106,7 +106,7 @@ github "Exyte/FanMenu" ~> 0.6.0
 
 *Manually*
 
-Drop [FanMenuView.swift](https://github.com/exyte/CirculoMenu/blob/master/FanMenu/FanMenuView.swift) in your project.
+Drop [FanMenuView.swift](https://github.com/exyte/fan-menu/blob/master/FanMenu/FanMenu.swift) in your project.
 
 ## Requirements
 
