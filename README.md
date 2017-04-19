@@ -95,7 +95,7 @@ Inspired by [Tice](https://dribbble.com/Tice).
 *CocoaPods*
 
 ```ruby
-pod "FanMenu", "0.6.0"
+pod "~> FanMenu", "0.6.0"
 ```
 
 *Carthage*
@@ -111,7 +111,7 @@ Drop [FanMenuView.swift](https://github.com/exyte/CirculoMenu/blob/master/FanMen
 ## Requirements
 
 * iOS 8.0+ / Mac OS X 10.9+
-* Xcode 7.3+
+* Xcode 8.0+
 
 ## Author
 
