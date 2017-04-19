@@ -72,11 +72,11 @@ All source code is in one single file called FanMenuView.swift. To modify menu s
 
 ## Examples
 
-To try CirculoMenu examples:
-- Clone the repo `git@github.com:exyte/Macaw.git`
-- Open terminal and run `cd <CirculoMenuRepo>/`
+To try FanMenu examples:
+- Clone the repo `git@github.com:exyte/FanMenu.git`
+- Open terminal and run `cd <FanMenuRepo>/`
 - Run `pod install` to install all dependencies
-- Run open `CirculoMenu.xcworkspace/` to open project in the Xcode
+- Run open `FanMenu.xcworkspace/` to open project in the Xcode
 - Select required controller as Initial Controller in storyboard
 - Try it!
 
