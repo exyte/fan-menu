@@ -142,7 +142,7 @@ class FanMenu: Group {
                 node.opacityVar.animation(to: 1.0, during: menuView.duration),
                 node.placeVar.animation(
                     to: self.expandPlace(index: index),
-                    during: menuView.duration
+                    during: menuView.duration   
                 ).easing(Easing.easeOut)
             ].combine().delay(menuView.duration / 7 * Double(index))
         }.combine()
