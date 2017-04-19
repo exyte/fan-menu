@@ -1,14 +1,14 @@
 import Foundation
 import Macaw
 
-class CircleMenuView: MacawView {
+class FanMenuView: MacawView {
     
     var duration = 0.20 {
         didSet {
             updateNode()
         }
     }
-
+    
     var distance = 95.0 {
         didSet {
             updateNode()
@@ -20,14 +20,14 @@ class CircleMenuView: MacawView {
             updateNode()
         }
     }
-
-    var centerButton: CircleMenuButton? {
+    
+    var centerButton: FanMenuButton? {
         didSet {
             updateNode()
         }
     }
     
-    var buttons: [CircleMenuButton] = [] {
+    var buttons: [FanMenuButton] = [] {
         didSet {
             updateNode()
         }
@@ -39,28 +39,21 @@ class CircleMenuView: MacawView {
         }
     }
     
-    var onButtonPressed: ((_ button: CircleMenuButton) -> ())?
-    
-    
-    func open() {
-        if let menu = self.node as? CircleMenu {
-            menu.open()
+    var menu: FanMenu? {
+        get {
+            return self.node as? FanMenu
         }
     }
     
-    func close() {
-        if let menu = self.node as? CircleMenu {
-            menu.close()
-        }
-    }
-
+    var onButtonPressed: ((_ button: FanMenuButton) -> ())?
+    
     func updateNode() {
-        guard let centerButton = centerButton else {
+        guard let _ = centerButton else {
             self.node = Group()
             return
         }
         
-        let node = CircleMenu(centerButton: centerButton, menuView: self)
+        let node = FanMenu(menuView: self)
         node.place = Transform.move(
             dx: Double(self.frame.width) / 2,
             dy: Double(self.frame.height) / 2
@@ -69,16 +62,15 @@ class CircleMenuView: MacawView {
     }
 }
 
-struct CircleMenuButton {
+struct FanMenuButton {
     let id: String
     let image: String
     let color: Color
 }
 
-class CircleMenu: Group {
+class FanMenu: Group {
     
-    let menuView: CircleMenuView
-    let centerButton: CircleMenuButton
+    let menuView: FanMenuView
     
     let buttonGroup: Group
     let buttonsGroup: Group
@@ -87,9 +79,9 @@ class CircleMenu: Group {
     let menuCircle: Shape
     let menuIcon: Image?
     
-    init(centerButton: CircleMenuButton, menuView: CircleMenuView) {
+    init(menuView: FanMenuView) {
         self.menuView = menuView
-        self.centerButton = centerButton
+        let centerButton = menuView.centerButton!
         
         menuCircle = Shape(
             form: Circle(r: menuView.radius),
@@ -97,13 +89,12 @@ class CircleMenu: Group {
         )
         
         buttonGroup = [menuCircle].group()
-        
         if let uiImage = UIImage(named: centerButton.image) {
             menuIcon = Image(
                 src: centerButton.image,
                 place: Transform.move(
                     dx: -Double(uiImage.size.width) / 2,
-                    dy:  -Double(uiImage.size.height) / 2
+                    dy: -Double(uiImage.size.height) / 2
                 )
             )
             buttonGroup.contents.append(menuIcon!)
@@ -112,10 +103,7 @@ class CircleMenu: Group {
         }
         
         buttonsGroup = menuView.buttons.map {
-            CircleMenuButtonNode(
-                button: $0,
-                menuView: menuView
-            )
+            FanMenuButtonNode(button: $0, menuView: menuView)
         }.group()
         
         backgroundCircle = Shape(
@@ -126,18 +114,19 @@ class CircleMenu: Group {
         super.init(contents: [backgroundCircle, buttonsGroup, buttonGroup])
         
         buttonGroup.onTouchPressed { _ in
-            self.toggle()
+            if self.isOpen {
+                self.close()
+            } else {
+                self.open()
+            }
             self.menuView.onButtonPressed?(centerButton)
         }
     }
     
     var animation: Animation?
-    
-    func close() {
-        if let animationVal = self.animation {
-            animationVal.reverse().play()
-            self.animation = nil
-            return
+    var isOpen: Bool {
+        get {
+            return self.animation != nil
         }
     }
     
@@ -154,25 +143,19 @@ class CircleMenu: Group {
                 node.placeVar.animation(
                     to: self.expandPlace(index: index),
                     during: menuView.duration
-                    ).easing(Easing.easeOut)
-                ].combine().delay(menuView.duration / 7 * Double(index))
-            }.combine()
+                ).easing(Easing.easeOut)
+            ].combine().delay(menuView.duration / 7 * Double(index))
+        }.combine()
         
-        // workaround
-        let imageAnimation = self.buttonGroup.opacityVar.animation(
-            to:  1.0,
-            during: menuView.duration
-        )
-
-        self.animation = [backgroundAnimation, expandAnimation, imageAnimation].combine()
-        self.animation?.play()
+        animation = [backgroundAnimation, expandAnimation].combine()
+        animation?.play()
     }
     
-    func toggle() {
-        if self.animation != nil {
-            close()
-        } else {
-            open()
+    func close() {
+        if let animationVal = self.animation {
+            animationVal.reverse().play()
+            self.animation = nil
+            return
         }
     }
     
@@ -181,7 +164,7 @@ class CircleMenu: Group {
         let endValue = self.menuView.interval.1
         let startValue = self.menuView.interval.0
         let interval = endValue - startValue
-
+        
         var step: Double = 0.0
         if interval.truncatingRemainder(dividingBy: 2*M_PI) < 0.00001 {
             // full circle
@@ -189,7 +172,7 @@ class CircleMenu: Group {
         } else {
             step = interval / (size - 1)
         }
-
+        
         let alpha = startValue + step * Double(index)
         return Transform.move(
             dx: cos(alpha) * menuView.distance,
@@ -198,14 +181,14 @@ class CircleMenu: Group {
     }
 }
 
-class CircleMenuButtonNode: Group {
-    init(button: CircleMenuButton, menuView: CircleMenuView) {
-        let circle = Shape(
-            form: Circle(r: menuView.radius),
-            fill: button.color
-        )
-
-        var contents: [Node] = [circle]
+class FanMenuButtonNode: Group {
+    init(button: FanMenuButton, menuView: FanMenuView) {
+        var contents: [Node] = [
+            Shape(
+                form: Circle(r: menuView.radius),
+                fill: button.color
+            )
+        ]
         if let uiImage = UIImage(named: button.image) {
             let image = Image(
                 src: button.image,
@@ -220,7 +203,7 @@ class CircleMenuButtonNode: Group {
         
         self.onTouchPressed { _ in
             menuView.onButtonPressed?(button)
-            menuView.close()
+            menuView.menu?.close()
         }
     }
 }

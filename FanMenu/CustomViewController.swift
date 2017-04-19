@@ -3,20 +3,20 @@ import Macaw
 
 class CustomViewController: UIViewController {
     
-    @IBOutlet weak var circleView: CustomCircleMenuView!
+    @IBOutlet weak var customView: CustomMenuView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        circleView.updateNode()
+        customView.updateNode()
     }
 }
 
-class CustomCircleMenuView: MacawView {
+class CustomMenuView: MacawView {
     
     let radius = 30.0
     let distance = 95.0
     let duration = 0.35
- 
+    
     let buttons = [
         ("exchange","custom_twitter", 0x059FF5),
         ("visa", "custom_whatsup", 0x4ECD5E),
@@ -28,7 +28,7 @@ class CustomCircleMenuView: MacawView {
     var onSharePressed: ((_ id: String) -> ())?
     
     func updateNode() {
-        let node = CustomCircleMenu(menuView: self)
+        let node = CustomMenu(menuView: self)
         node.place = Transform.move(
             dx: Double(self.frame.width) / 2,
             dy: Double(self.frame.height) / 2
@@ -37,18 +37,18 @@ class CustomCircleMenuView: MacawView {
     }
 }
 
-class CustomCircleMenu: Group {
+class CustomMenu: Group {
     
-    let menuView: CustomCircleMenuView
+    let menuView: CustomMenuView
     
     let menuButton: CustomMenuButton
-    let buttonsGroup: CustomCircleButtons
+    let buttonsGroup: CustomButtons
     
-    init(menuView: CustomCircleMenuView) {
+    init(menuView: CustomMenuView) {
         self.menuView = menuView
         
         menuButton = CustomMenuButton(radius: menuView.radius)
-        buttonsGroup = CustomCircleButtons(menuView: menuView)
+        buttonsGroup = CustomButtons(menuView: menuView)
         
         super.init(contents: [menuButton, buttonsGroup])
         
@@ -72,7 +72,7 @@ class CustomCircleMenu: Group {
         self.animation = [
             buttonsGroup.show(duration: menuView.duration),
             menuButton.open(duration: menuView.duration, scale: scale)
-        ].combine()
+            ].combine()
         self.animation?.play()
     }
     
@@ -89,16 +89,16 @@ class CustomCircleMenu: Group {
     }
 }
 
-class CustomCircleButtons: Group {
+class CustomButtons: Group {
     
     let animationGroup: Group
     
-    init(menuView: CustomCircleMenuView) {
+    init(menuView: CustomMenuView) {
         animationGroup = Group()
         super.init(contents: [])
         
         self.contents = menuView.buttons.enumerated().map { (index, item) in
-            return createCircleButton(menuView: menuView, data: item, index: index)
+            return createCustomButton(menuView: menuView, data: item, index: index)
         }
         
         self.contents.append(animationGroup)
@@ -106,13 +106,13 @@ class CustomCircleButtons: Group {
         self.opacity = 0.0
     }
     
-    func createCircleButton(menuView: CustomCircleMenuView, data: (String, String, Int), index: Int) -> Node {
-        let node = CustomCircleButton(
+    func createCustomButton(menuView: CustomMenuView, data: (String, String, Int), index: Int) -> Node {
+        let node = CustomButton(
             radius: menuView.radius,
             color: Color(val: data.2),
             image: data.1
         )
-
+        
         let size = Double(menuView.buttons.count)
         let step: Double = (2 * M_PI) / size
         
@@ -137,7 +137,7 @@ class CustomCircleButtons: Group {
         ].combine().easing(Easing.easeOut)
     }
     
-    func select(node: CustomCircleButton, alpha: Double, color: Int, menuView: CustomCircleMenuView) {
+    func select(node: CustomButton, alpha: Double, color: Int, menuView: CustomMenuView) {
         let contentAnimation = animationGroup.contentsVar.animation({ t in
             let shape = Shape(
                 form: Arc(
@@ -145,7 +145,7 @@ class CustomCircleButtons: Group {
                     shift: alpha,
                     extent: 2 * M_PI * t
                 ),
-                stroke: Stroke(fill: Color(val: color), width: menuView.radius * 2)
+                stroke: Stroke(fill: Color(val: color), width: menuView.radius * 2 + 1)
             )
             return [shape]
         }, during: menuView.duration)
@@ -158,13 +158,13 @@ class CustomCircleButtons: Group {
         animation.play()
         
         contentAnimation.onComplete {
-            let menu = menuView.node as? CustomCircleMenu
+            let menu = menuView.node as? CustomMenu
             menu?.close()
         }
     }
 }
 
-class CustomCircleButton: Group {
+class CustomButton: Group {
     
     init(radius: Double, color: Color, image: String) {
         

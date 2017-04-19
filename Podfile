@@ -1,5 +1,5 @@
 use_frameworks!
 
-target 'Circulo' do
+target 'FanMenu' do
     pod "Macaw", "0.8.1"
 end

@@ -4,7 +4,7 @@ import Macaw
 
 class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var circleMenuView: CircleMenuView!
+    @IBOutlet weak var fanMenuView: FanMenuView!
     @IBOutlet weak var tableView: UITableView!
     
     let data = [
@@ -14,6 +14,13 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         ("outcome", "Dinner", "06-04", "-$55.00", "transaction_dinner"),
         ("outcome", "Shopping", "06-04", "-$511.30", "transaction_shoping"),
         ("outcome", "Travel", "07-05", "-$2800.00", "transaction_travel")
+    ]
+    
+    let buttons = [
+        ("exchange", 0x9F85FF),
+        ("wallet", 0x85B1FF),
+        ("money_box", 0xFF703B),
+        ("visa", 0xF55B58),
     ]
     
     override func viewDidLoad() {
@@ -28,40 +35,25 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
             alpha: 1.0
         )
         
-        circleMenuView.centerButton = CircleMenuButton(
+        fanMenuView.centerButton = FanMenuButton(
             id: "main",
             image: "menu_plus",
             color: Color(val: 0x7C93FE)
         )
-
-        circleMenuView.buttons = [
-            CircleMenuButton(
-                id: "exchange",
-                image: "menu_exchange",
-                color: Color(val: 0x9F85FF)
-            ),
-            CircleMenuButton(
-                id: "wallet",
-                image: "menu_wallet",
-                color: Color(val: 0x85B1FF)
-            ),
-            CircleMenuButton(
-                id: "money_box",
-                image: "menu_money_box",
-                color: Color(val: 0xFF703B)
-            ),
-            CircleMenuButton(
-                id: "visa",
-                image: "menu_visa",
-                color: Color(val: 0xF55B58)
+        
+        fanMenuView.buttons = buttons.map { button in
+            FanMenuButton(
+                id: button.0,
+                image: "menu_\(button.0)",
+                color: Color(val: button.1)
             )
-        ]
-
-        circleMenuView.distance = 90.0
-        circleMenuView.duration = 0.35
-        circleMenuView.interval = (M_PI, 2 * M_PI)
-
-        circleMenuView.onButtonPressed = { button in
+        }
+        
+        fanMenuView.distance = 90.0
+        fanMenuView.duration = 0.35
+        fanMenuView.interval = (M_PI, 2 * M_PI)
+        
+        fanMenuView.onButtonPressed = { button in
             switch button.id {
             case "exchange":
                 print("open exchange screen")
@@ -82,7 +74,7 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         transactionCell.amountLabel.text = data.3
         transactionCell.transactionImage.image = UIImage(named: data.4)!
         return transactionCell
-}
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count

@@ -4,37 +4,37 @@ import Macaw
 
 class ShopViewController: UIViewController {
     
-    @IBOutlet weak var circleMenuView: CircleMenuView!
+    @IBOutlet weak var fanMenuView: FanMenuView!
     @IBOutlet weak var topView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        circleMenuView.centerButton = CircleMenuButton(
+        fanMenuView.centerButton = FanMenuButton(
             id: "main",
             image: "menu_plus",
             color: Color(val: 0xADADAD)
         )
         
-        circleMenuView.buttons = [
-            CircleMenuButton(
+        fanMenuView.buttons = [
+            FanMenuButton(
                 id: "photo",
                 image: "shop_photo",
                 color: Color(val: 0xCECBCB)
             ),
-            CircleMenuButton(
+            FanMenuButton(
                 id: "gallery",
                 image: "shop_gallery",
                 color: Color(val: 0xCECBCB)
             ),
         ]
         
-        circleMenuView.distance = 100.0
-        circleMenuView.duration = 0.35
-        circleMenuView.interval = (M_PI + M_PI/4, M_PI + 3 * M_PI/4)
-        circleMenuView.radius = 25.0
+        fanMenuView.distance = 100.0
+        fanMenuView.duration = 0.35
+        fanMenuView.interval = (M_PI + M_PI/4, M_PI + 3 * M_PI/4)
+        fanMenuView.radius = 25.0
         
-        circleMenuView.onButtonPressed = { button in
+        fanMenuView.onButtonPressed = { button in
             self.showView()
         }
     }

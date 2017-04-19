@@ -1,65 +1,72 @@
-# CirculoMenu
-Menu with a circular layout based on lovely [Macaw](https://github.com/exyte/macaw).
+# FanMenu
+Menu with a circular layout based on [Macaw](https://github.com/exyte/Macaw).
 
 <img src="http://i.imgur.com/ihN9FIb.gif" height="500"> <img src="http://i.imgur.com/ZHTmtcn.gif" height="500"> <img src="http://i.imgur.com/KslbTC5.gif" height="500">
 
 # Usage
 1. Create `UIView` in your storyboard or programatically.
-2. Set `CircleMenuView` as `UIView` class.
+2. Set `FanMenuView` as `UIView` class.
 3. Set center button
 ```swift
-circleMenuView.centerButton = CircleMenuButton(
- id: "main",
- image: "plus",
- color: Color(val: 0x7C93FE)
+fanMenuView.centerButton = FanMenuButton(
+  id: "main",
+  image: "plus",
+  color: Color(val: 0x7C93FE)
 )
 ```
-4. Set circle buttons
+4. Set buttons
 ```swift
-circleMenuView.buttons = [
- CircleMenuButton(
-  id: "exchange_id",
-  image: "exchange",
-  color: Color(val: 0x9F85FF)
- ),
- ...
- CircleMenuButton(
-  id: "visa_id",
-  image: "visa",
-  color: Color(val: 0xF55B58)
- )
+fanMenuView.buttons = [
+  FanMenuButton(
+    id: "exchange_id",
+    image: "exchange",
+    color: Color(val: 0x9F85FF)
+  ),
+  ...
+  FanMenuButton(
+    id: "visa_id",
+    image: "visa",
+    color: Color(val: 0xF55B58)
+  )
 ]
 ```
 5. Add event handler
 ```swift
- circleMenuView.onButtonPressed = { button in
+ fanMenuView.onButtonPressed = { button in
   switch button.id {
-   case "exchange_id":
-    print("open exchange screen")
-   case "visa_id":
-    print("open cards screen")
-   default:
-    print("other")
-   }
+    case "exchange_id":
+      print("open exchange screen")
+    case "visa_id":
+      print("open cards screen")
+    default:
+      print("other")
+  }
 }
 ```
 6. Configure optional parameters
 ```swift
 // distance between center button and buttons
-circleMenuView.distance = 90.0
+fanMenuView.distance = 90.0
 
 // animation duration
-circleMenuView.duration = 0.35
+fanMenuView.duration = 0.35
 
-// interval for buttons, in radians
-circleMenuView.interval = (0, 2.0 * M_PI)
+// interval for buttons in radians
+fanMenuView.interval = (0, 2.0 * M_PI)
+```
+
+7. Useful methods
+```swift
+fanMenuView.menu.isOpen
+fanMenuView.menu.open()
+fanMenuView.menu.close()
 ```
 
 ## Customization
 
-CirculoMenu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift library. Because of that CirculoMenu could be easily modified and improved for your purposes. 
+FanMenu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift library. Because of that CirculoMenu could be easily modified and improved for your purposes. 
 
-All source code is in one single file called CircleMenuView.swift. To modify menu simply copy this file and apply necessary changes. With CircleMenu and Macaw you could make awesome menus!
+All source code is in one single file called FanMenuView.swift. To modify menu simply copy this file and apply necessary changes. With FanMenu and Macaw you could make awesome menus!
 
 <img src="http://i.imgur.com/w2OK6Db.gif" height="500">
 
@@ -75,11 +82,11 @@ To try CirculoMenu examples:
 
 We have next examples:
 
-- [FinanceViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/FinanceViewController.swift)
+- [FinanceViewController.swift](https://github.com/exyte/FanMenu/blob/master/FanMenu/FinanceViewController.swift)
 Accounting & Financial Management. Inspired by [Yingfang Xie](https://dribbble.com/Melodyblue).
-- [TaskViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/TaskViewController.swift)
+- [TaskViewController.swift](https://github.com/exyte/FanMenu/blob/master/FanMenu/TaskViewController.swift)
 Color Coding Microinteraction. Insipred by [Filippos Protogeridis](https://dribbble.com/protogeridis).
-- [ShopViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/ShopViewController.swift)
+- [ShopViewController.swift](https://github.com/exyte/FanMenu/blob/master/FanMenu/ShopViewController.swift)
 Inspired by [Tice](https://dribbble.com/Tice).
 - [CustomViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/CustomViewController.swift) Inspired by awesome Ramotion control [circle-menu](https://github.com/Ramotion/circle-menu)
 
@@ -88,18 +95,18 @@ Inspired by [Tice](https://dribbble.com/Tice).
 *CocoaPods*
 
 ```ruby
-pod "CirculoMenu", "0.6.0"
+pod "FanMenu", "0.6.0"
 ```
 
 *Carthage*
 
 ```ogdl
-github "Exyte/CirculoMenu" ~> 0.6.0
+github "Exyte/FanMenu" ~> 0.6.0
 ```
 
 *Manually*
 
-Drop [CircleMenuView.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/CircleMenuView.swift) in your project.
+Drop [FanMenuView.swift](https://github.com/exyte/CirculoMenu/blob/master/FanMenu/FanMenuView.swift) in your project.
 
 ## Requirements
 
