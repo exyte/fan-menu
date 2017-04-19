@@ -1,5 +1,5 @@
 # FanMenu
-Menu with a circular layout based on [Macaw](https://github.com/exyte/Macaw).
+Menu with a circular layout based on [Macaw](https://github.com/exyte/Macaw). This project is maintained by the [exyte](https://www.exyte.com) company.
 
 <img src="http://i.imgur.com/ihN9FIb.gif" height="500"> <img src="http://i.imgur.com/ZHTmtcn.gif" height="500"> <img src="http://i.imgur.com/KslbTC5.gif" height="500">
 
