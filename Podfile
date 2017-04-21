@@ -1,5 +1,5 @@
 use_frameworks!
 
 target 'FanMenu' do
-    pod "Macaw", "0.8.1"
+    pod 'Macaw', git: 'https://github.com/exyte/Macaw.git'
 end

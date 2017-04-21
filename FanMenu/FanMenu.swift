@@ -114,6 +114,12 @@ class FanMenu: Group {
         super.init(contents: [backgroundCircle, buttonsGroup, buttonGroup])
         
         buttonGroup.onTouchPressed { _ in
+            if let animationValue = self.animation {
+                if animationValue.state() != .paused {
+                    return
+                }
+            }
+            
             if self.isOpen {
                 self.close()
             } else {
@@ -124,13 +130,11 @@ class FanMenu: Group {
     }
     
     var animation: Animation?
-    var isOpen: Bool {
-        get {
-            return self.animation != nil
-        }
-    }
+    var isOpen: Bool = false
     
     func open() {
+        isOpen = true
+
         let scale = menuView.distance / menuView.radius
         let backgroundAnimation = self.backgroundCircle.placeVar.animation(
             to: Transform.scale(sx: scale, sy: scale),
@@ -152,10 +156,11 @@ class FanMenu: Group {
     }
     
     func close() {
+        isOpen = false
+        
         if let animationVal = self.animation {
-            animationVal.reverse().play()
-            self.animation = nil
-            return
+            self.animation = animationVal.reverse()
+            animation?.play()
         }
     }
     
