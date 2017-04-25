@@ -40,7 +40,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hA6-To-i0S" id="K9P-xo-IkW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Part time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3L6-CT-OGR">
@@ -104,7 +104,7 @@
                                         <rect key="frame" x="0.0" y="118" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fQ8-Dv-4T6" id="HFH-7h-5Rn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Part time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PQ-Fk-CGE">
@@ -166,7 +166,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-fP-w63" customClass="FanMenuView" customModule="FanMenu" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-fP-w63" customClass="FanMenu" customModule="FanMenu" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="487" width="375" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="yup-jd-4tG"/>
@@ -191,7 +191,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fanMenuView" destination="H1g-fP-w63" id="lYe-vm-GYK"/>
+                        <outlet property="fanMenu" destination="H1g-fP-w63" id="anH-PJ-Fkj"/>
                         <outlet property="tableView" destination="crE-6C-bCq" id="5e7-Bl-N9A"/>
                     </connections>
                 </viewController>
@@ -345,7 +345,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xtu-2g-N8I" customClass="FanMenuView" customModule="FanMenu" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xtu-2g-N8I" customClass="FanMenu" customModule="FanMenu" customModuleProvider="target">
                                 <rect key="frame" x="220" y="211" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="3jQ-xI-1xM"/>
@@ -391,7 +391,7 @@
                     </view>
                     <connections>
                         <outlet property="colorLabel" destination="tjC-VF-xX5" id="A6c-vO-6Iy"/>
-                        <outlet property="fanMenuView" destination="Xtu-2g-N8I" id="X4o-t3-1Yf"/>
+                        <outlet property="fanMenu" destination="Xtu-2g-N8I" id="3Ie-pF-i39"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FX-RV-gmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1042,7 +1042,7 @@
                                     <constraint firstItem="50L-xd-1NW" firstAttribute="top" secondItem="rPV-Qp-rmn" secondAttribute="bottom" constant="20" id="zAi-Mh-FP1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0w-Fu-6Xn" customClass="FanMenuView" customModule="FanMenu" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0w-Fu-6Xn" customClass="FanMenu" customModule="FanMenu" customModuleProvider="target">
                                 <rect key="frame" x="68" y="497" width="240" height="240"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1090,7 +1090,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fanMenuView" destination="l0w-Fu-6Xn" id="BOZ-ei-G5n"/>
+                        <outlet property="fanMenu" destination="l0w-Fu-6Xn" id="DIj-hd-YMV"/>
                         <outlet property="topView" destination="dXu-WM-LNJ" id="JFA-ce-tWh"/>
                     </connections>
                 </viewController>
@@ -1110,7 +1110,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRc-Vk-QRU" customClass="CustomMenuView" customModule="FanMenu" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRc-Vk-QRU" customClass="CustomMenu" customModule="FanMenu" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -1124,7 +1124,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="customView" destination="xRc-Vk-QRU" id="cRx-6y-QLa"/>
+                        <outlet property="customMenu" destination="xRc-Vk-QRU" id="qp4-mZ-xtb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYd-UY-v9f" userLabel="First Responder" sceneMemberID="firstResponder"/>

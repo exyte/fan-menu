@@ -3,21 +3,21 @@ import Macaw
 
 class CustomViewController: UIViewController {
     
-    @IBOutlet weak var customView: CustomMenuView!
+    @IBOutlet weak var customMenu: CustomMenu!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customView.updateNode()
+        customMenu.updateNode()
     }
 }
 
-class CustomMenuView: MacawView {
+class CustomMenu: MacawView {
     
     let radius = 30.0
-    let distance = 95.0
+    let menuRadius = 95.0
     let duration = 0.35
     
-    let buttons = [
+    let items = [
         ("exchange","custom_twitter", 0x059FF5),
         ("visa", "custom_whatsup", 0x4ECD5E),
         ("wallet", "custom_telegram", 0x27A2E1),
@@ -27,32 +27,42 @@ class CustomMenuView: MacawView {
     
     var onSharePressed: ((_ id: String) -> ())?
     
+    var scene: CustomMenuScene?
+    
     func updateNode() {
-        let node = CustomMenu(menuView: self)
+        let menuScene = CustomMenuScene(customMenu: self)
+        let node = menuScene.node
         node.place = Transform.move(
             dx: Double(self.frame.width) / 2,
             dy: Double(self.frame.height) / 2
         )
+        self.scene = menuScene
         self.node = node
+    }
+    
+    func close() {
+        scene?.close()
     }
 }
 
-class CustomMenu: Group {
+class CustomMenuScene {
     
-    let menuView: CustomMenuView
+    let customMenu: CustomMenu
     
-    let menuButton: CustomMenuButton
-    let buttonsGroup: CustomButtons
+    let menuButton: CustomMenuButtonScene
+    let buttonsGroup: CustomButtonsScene
     
-    init(menuView: CustomMenuView) {
-        self.menuView = menuView
+    let node: Group
+    
+    init(customMenu: CustomMenu) {
+        self.customMenu = customMenu
         
-        menuButton = CustomMenuButton(radius: menuView.radius)
-        buttonsGroup = CustomButtons(menuView: menuView)
+        menuButton = CustomMenuButtonScene(radius: customMenu.radius)
+        buttonsGroup = CustomButtonsScene(customMenu: customMenu)
         
-        super.init(contents: [menuButton, buttonsGroup])
+        node = [menuButton.node, buttonsGroup.node].group()
         
-        menuButton.onTouchPressed { _ in
+        menuButton.node.onTouchPressed { _ in
             self.toggle()
         }
     }
@@ -68,11 +78,11 @@ class CustomMenu: Group {
     }
     
     func open() {
-        let scale = menuView.distance / menuView.radius
+        let scale = customMenu.menuRadius / customMenu.radius
         self.animation = [
-            buttonsGroup.show(duration: menuView.duration),
-            menuButton.open(duration: menuView.duration, scale: scale)
-            ].combine()
+            buttonsGroup.show(duration: customMenu.duration),
+            menuButton.open(duration: customMenu.duration, scale: scale)
+        ].combine()
         self.animation?.play()
     }
     
@@ -89,85 +99,48 @@ class CustomMenu: Group {
     }
 }
 
-class CustomButtons: Group {
+class CustomButtonsScene {
     
+    var node: Group!
     let animationGroup: Group
     
-    init(menuView: CustomMenuView) {
+    init(customMenu: CustomMenu) {
         animationGroup = Group()
-        super.init(contents: [])
+        node = Group()
         
-        self.contents = menuView.buttons.enumerated().map { (index, item) in
-            return createCustomButton(menuView: menuView, data: item, index: index)
-        }
+        node = Group(contents: customMenu.items.enumerated().map { (index, item) in
+            return self.createCustomButton(customMenu: customMenu, data: item, index: index)
+        })
         
-        self.contents.append(animationGroup)
-        self.place = Transform.identity.scale(sx: 0.4, sy: 0.4)
-        self.opacity = 0.0
+        node.contents.append(animationGroup)
+        node.place = Transform.identity.scale(sx: 0.4, sy: 0.4)
+        node.opacity = 0.0
     }
     
-    func createCustomButton(menuView: CustomMenuView, data: (String, String, Int), index: Int) -> Node {
-        let node = CustomButton(
-            radius: menuView.radius,
+    func createCustomButton(customMenu: CustomMenu, data: (String, String, Int), index: Int) -> Node {
+        let node = createCustomButton(
+            radius: customMenu.radius,
             color: Color(val: data.2),
             image: data.1
         )
         
-        let size = Double(menuView.buttons.count)
+        let size = Double(customMenu.items.count)
         let step: Double = (2 * M_PI) / size
         
         let alpha = 3 * M_PI / 2 + step * Double(index)
         let place = Transform.move(
-            dx: cos(alpha) * menuView.distance,
-            dy: sin(alpha) * menuView.distance
+            dx: cos(alpha) * customMenu.menuRadius,
+            dy: sin(alpha) * customMenu.menuRadius
         )
         node.place = place
         
         node.onTouchPressed { _ in
-            self.select(node: node, alpha: alpha, color: data.2, menuView: menuView)
+            self.select(node: node, alpha: alpha, color: data.2, customMenu: customMenu)
         }
         return node
     }
     
-    func show(duration: Double) -> Animation {
-        animationGroup.contents = []
-        return [
-            opacityVar.animation(to: 1.0, during: duration),
-            placeVar.animation(to: place.scale(sx: 2.5, sy: 2.5), during: duration)
-        ].combine().easing(Easing.easeOut)
-    }
-    
-    func select(node: CustomButton, alpha: Double, color: Int, menuView: CustomMenuView) {
-        let contentAnimation = animationGroup.contentsVar.animation({ t in
-            let shape = Shape(
-                form: Arc(
-                    ellipse: Ellipse(rx: menuView.distance, ry: menuView.distance),
-                    shift: alpha,
-                    extent: 2 * M_PI * t
-                ),
-                stroke: Stroke(fill: Color(val: color), width: menuView.radius * 2 + 1)
-            )
-            return [shape]
-        }, during: menuView.duration)
-        let opacityAnimation = node.opacityVar.animation(
-            to: 1.0,
-            during: menuView.duration
-        )
-        
-        let animation = [contentAnimation, opacityAnimation].combine()
-        animation.play()
-        
-        contentAnimation.onComplete {
-            let menu = menuView.node as? CustomMenu
-            menu?.close()
-        }
-    }
-}
-
-class CustomButton: Group {
-    
-    init(radius: Double, color: Color, image: String) {
-        
+    func createCustomButton(radius: Double, color: Color, image: String) -> Group {
         let circle = Shape(
             form: Circle(r: radius),
             fill: color
@@ -180,16 +153,49 @@ class CustomButton: Group {
                 dy: -Double(uiImage.size.height) / 2
             )
         )
-        super.init(contents: [circle, image])
+        return [circle, image].group()
+    }
+    
+    func show(duration: Double) -> Animation {
+        animationGroup.contents = []
+        return [
+            node.opacityVar.animation(to: 1.0, during: duration),
+            node.placeVar.animation(to: node.place.scale(sx: 2.5, sy: 2.5), during: duration)
+        ].combine().easing(Easing.easeOut)
+    }
+    
+    func select(node: Node, alpha: Double, color: Int, customMenu: CustomMenu) {
+        let contentAnimation = animationGroup.contentsVar.animation({ t in
+            let shape = Shape(
+                form: Arc(
+                    ellipse: Ellipse(rx: customMenu.menuRadius, ry: customMenu.menuRadius),
+                    shift: alpha,
+                    extent: 2 * M_PI * t
+                ),
+                stroke: Stroke(fill: Color(val: color), width: customMenu.radius * 2 + 1)
+            )
+            return [shape]
+        }, during: customMenu.duration)
+        let opacityAnimation = node.opacityVar.animation(
+            to: 1.0,
+            during: customMenu.duration
+        )
+        
+        let animation = [contentAnimation, opacityAnimation].combine()
+        animation.play()
+        
+        contentAnimation.onComplete {
+            customMenu.close()
+        }
     }
 }
 
-
-class CustomMenuButton: Group {
+class CustomMenuButtonScene {
     
-    let backgroundCircle: Shape
-    let openButtonsGroup: Group
-    let closeButtonsGroup: Group
+    var backgroundCircle: Shape!
+    var openButtons: Group!
+    var closeButtons: Group!
+    var node: Group!
     
     init(radius: Double) {
         backgroundCircle = Shape(
@@ -197,25 +203,23 @@ class CustomMenuButton: Group {
             fill: Color.white.with(a: 0.5)
         )
         
-        openButtonsGroup = CustomMenuState(image: "custom_share", radius: radius)
-        closeButtonsGroup = CustomMenuState(image: "custom_close", radius: radius, a: 0.7)
-        closeButtonsGroup.opacity = 0.0
+        openButtons = createMenuState(image: "custom_share", radius: radius)
+        closeButtons = createMenuState(image: "custom_close", radius: radius, a: 0.7)
+        closeButtons.opacity = 0.0
         
-        super.init(contents: [backgroundCircle, openButtonsGroup, closeButtonsGroup])
+        node = [backgroundCircle, openButtons, closeButtons].group()
     }
     
     func open(duration: Double, scale: Double) -> Animation {
         return [
             backgroundCircle.placeVar.animation(to: Transform.scale(sx: scale, sy: scale), during: duration),
             backgroundCircle.opacityVar.animation(to: 0.0, during: duration),
-            openButtonsGroup.opacityVar.animation(to: 0.0, during: duration),
-            closeButtonsGroup.opacityVar.animation(to: 1.0, during: duration)
+            openButtons.opacityVar.animation(to: 0.0, during: duration),
+            closeButtons.opacityVar.animation(to: 1.0, during: duration)
         ].combine()
     }
-}
-
-class CustomMenuState: Group {
-    init(image: String, radius: Double, a: Double = 1.0) {
+    
+    func createMenuState(image: String, radius: Double, a: Double = 1.0) -> Group {
         let circle = Shape(
             form: Circle(r: radius),
             fill: Color.white.with(a: a)
@@ -229,6 +233,6 @@ class CustomMenuState: Group {
                 dy:  -Double(uiImage.size.height) / 2
             )
         )
-        super.init(contents: [circle, menuIcon])
+        return [circle, menuIcon].group()
     }
 }

@@ -5,18 +5,18 @@ Menu with a circular layout based on [Macaw](https://github.com/exyte/Macaw). Th
 
 # Usage
 1. Create `UIView` in your storyboard or programatically.
-2. Set `FanMenuView` as `UIView` class.
-3. Set center button
+2. Set `FanMenu` as `UIView` class.
+3. Set button
 ```swift
-fanMenuView.centerButton = FanMenuButton(
+fanMenu.button = FanMenuButton(
   id: "main",
   image: "plus",
   color: Color(val: 0x7C93FE)
 )
 ```
-4. Set buttons
+4. Set menu items
 ```swift
-fanMenuView.buttons = [
+fanMenu.items = [
   FanMenuButton(
     id: "exchange_id",
     image: "exchange",
@@ -32,7 +32,7 @@ fanMenuView.buttons = [
 ```
 5. Add event handler
 ```swift
- fanMenuView.onButtonPressed = { button in
+ fanMenu.onButtonPressed = { button in
   switch button.id {
     case "exchange_id":
       print("open exchange screen")
@@ -46,20 +46,26 @@ fanMenuView.buttons = [
 6. Configure optional parameters
 ```swift
 // distance between center button and buttons
-fanMenuView.distance = 90.0
+fanMenu.menuRadius = 90.0
 
 // animation duration
-fanMenuView.duration = 0.35
+fanMenu.duration = 0.35
+
+// menu opening delay
+fanMenu.delay = 0.05
 
 // interval for buttons in radians
-fanMenuView.interval = (0, 2.0 * M_PI)
+fanMenu.interval = (0, 2.0 * M_PI)
+
+// menu background color
+fanMenu.menuBackground = Color.red
 ```
 
 7. Useful methods
 ```swift
-fanMenuView.menu.isOpen
-fanMenuView.menu.open()
-fanMenuView.menu.close()
+fanMenu.isOpen
+fanMenu.open()
+fanMenu.close()
 ```
 
 ## Customization

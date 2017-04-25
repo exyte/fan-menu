@@ -3,7 +3,7 @@ import UIKit
 import Macaw
 
 class TaskViewController: UIViewController {
-    @IBOutlet weak var fanMenuView: FanMenuView!
+    @IBOutlet weak var fanMenu: FanMenu!
     @IBOutlet weak var colorLabel: UILabel!
     
     let colors = [0x231FE4, 0x00BFB6, 0xFFC43D, 0xFF5F3D, 0xF34766]
@@ -11,8 +11,8 @@ class TaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fanMenuView.centerButton = mainButton(colorHex: 0x7C93FE)
-        fanMenuView.buttons = colors.enumerated().map { (index, item) in
+        fanMenu.button = mainButton(colorHex: 0x7C93FE)
+        fanMenu.items = colors.enumerated().map { (index, item) in
             FanMenuButton(
                 id: String(index),
                 image: "",
@@ -20,21 +20,23 @@ class TaskViewController: UIViewController {
             )
         }
         
-        fanMenuView.distance = 70.0
-        fanMenuView.duration = 0.35
-        fanMenuView.interval = (M_PI, 2 * M_PI)
-        fanMenuView.radius = 15.0
+        fanMenu.menuRadius = 70.0
+        fanMenu.duration = 0.35
+        fanMenu.interval = (M_PI, 2 * M_PI)
+        fanMenu.radius = 15.0
         
-        fanMenuView.onButtonPressed = { button in
+        fanMenu.onButtonPressed = { button in
             self.hideTitle()
             if button.id != "main" {
                 let newColor = self.colors[Int(button.id)!]
-                let circleMenu = self.fanMenuView.node as? FanMenu
-                circleMenu?.menuCircle.fill = Color(val: newColor)
+                let fanGroup = self.fanMenu.node as? Group
+                let circleGroup = fanGroup?.contents[2] as? Group
+                let shape = circleGroup?.contents[0] as? Shape
+                shape?.fill = Color(val: newColor)
             }
         }
         
-        fanMenuView.transform = CGAffineTransform(rotationAngle: CGFloat(3 * M_PI/2.0))
+        fanMenu.transform = CGAffineTransform(rotationAngle: CGFloat(3 * M_PI/2.0))
     }
     
     func hideTitle() {

@@ -4,19 +4,19 @@ import Macaw
 
 class ShopViewController: UIViewController {
     
-    @IBOutlet weak var fanMenuView: FanMenuView!
+    @IBOutlet weak var fanMenu: FanMenu!
     @IBOutlet weak var topView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fanMenuView.centerButton = FanMenuButton(
+        fanMenu.button = FanMenuButton(
             id: "main",
             image: "menu_plus",
             color: Color(val: 0xADADAD)
         )
         
-        fanMenuView.buttons = [
+        fanMenu.items = [
             FanMenuButton(
                 id: "photo",
                 image: "shop_photo",
@@ -29,12 +29,13 @@ class ShopViewController: UIViewController {
             ),
         ]
         
-        fanMenuView.distance = 100.0
-        fanMenuView.duration = 0.35
-        fanMenuView.interval = (M_PI + M_PI/4, M_PI + 3 * M_PI/4)
-        fanMenuView.radius = 25.0
+        fanMenu.menuRadius = 100.0
+        fanMenu.duration = 0.35
+        fanMenu.interval = (M_PI + M_PI/4, M_PI + 3 * M_PI/4)
+        fanMenu.radius = 25.0
+        fanMenu.delay = 0.0
         
-        fanMenuView.onButtonPressed = { button in
+        fanMenu.onButtonPressed = { button in
             self.showView()
         }
     }

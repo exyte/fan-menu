@@ -4,7 +4,7 @@ import Macaw
 
 class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var fanMenuView: FanMenuView!
+    @IBOutlet weak var fanMenu: FanMenu!
     @IBOutlet weak var tableView: UITableView!
     
     let data = [
@@ -16,7 +16,7 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         ("outcome", "Travel", "07-05", "-$2800.00", "transaction_travel")
     ]
     
-    let buttons = [
+    let items = [
         ("exchange", 0x9F85FF),
         ("wallet", 0x85B1FF),
         ("money_box", 0xFF703B),
@@ -35,13 +35,13 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
             alpha: 1.0
         )
         
-        fanMenuView.centerButton = FanMenuButton(
+        fanMenu.button = FanMenuButton(
             id: "main",
             image: "menu_plus",
             color: Color(val: 0x7C93FE)
         )
         
-        fanMenuView.buttons = buttons.map { button in
+        fanMenu.items = items.map { button in
             FanMenuButton(
                 id: button.0,
                 image: "menu_\(button.0)",
@@ -49,11 +49,11 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
             )
         }
         
-        fanMenuView.distance = 90.0
-        fanMenuView.duration = 0.35
-        fanMenuView.interval = (M_PI, 2 * M_PI)
+        fanMenu.menuRadius = 90.0
+        fanMenu.duration = 0.35
+        fanMenu.interval = (M_PI, 2 * M_PI)
         
-        fanMenuView.onButtonPressed = { button in
+        fanMenu.onButtonPressed = { button in
             switch button.id {
             case "exchange":
                 print("open exchange screen")
