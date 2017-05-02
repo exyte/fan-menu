@@ -138,7 +138,7 @@ class FanMenuScene {
         
         
         backgroundCircle = Shape(
-            form: Circle(r: fanMenu.radius)
+            form: Circle(r: fanMenu.radius - 1)
         )
         
         if let color = fanMenu.menuBackground {
