@@ -51,7 +51,7 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         fanMenu.menuRadius = 90.0
         fanMenu.duration = 0.35
-        fanMenu.interval = (M_PI, 2 * M_PI)
+        fanMenu.interval = (Double.pi, 2 * Double.pi)
         
         fanMenu.onButtonPressed = { button in
             switch button.id {

@@ -125,9 +125,9 @@ class CustomButtonsScene {
         )
         
         let size = Double(customMenu.items.count)
-        let step: Double = (2 * M_PI) / size
+        let step: Double = (2 * Double.pi) / size
         
-        let alpha = 3 * M_PI / 2 + step * Double(index)
+        let alpha = 3 * Double.pi / 2 + step * Double(index)
         let place = Transform.move(
             dx: cos(alpha) * customMenu.menuRadius,
             dy: sin(alpha) * customMenu.menuRadius
@@ -170,7 +170,7 @@ class CustomButtonsScene {
                 form: Arc(
                     ellipse: Ellipse(rx: customMenu.menuRadius, ry: customMenu.menuRadius),
                     shift: alpha,
-                    extent: 2 * M_PI * t
+                    extent: 2 * Double.pi * t
                 ),
                 stroke: Stroke(fill: Color(val: color), width: customMenu.radius * 2 + 1)
             )

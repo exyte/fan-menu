@@ -45,7 +45,7 @@ public class FanMenu: MacawView {
         }
     }
     
-    public var interval: (Double, Double) = (0, 2.0 * M_PI) {
+    public var interval: (Double, Double) = (0, 2.0 * Double.pi) {
         didSet {
             updateNode()
         }
@@ -133,7 +133,8 @@ class FanMenuScene {
         }
         
         buttonsNode = fanMenu.items.map {
-            FanMenuScene.createFanButtonNode(button: $0, fanMenu: fanMenu)
+            print($0.id)
+            return FanMenuScene.createFanButtonNode(button: $0, fanMenu: fanMenu)
         }.group()
         
         
@@ -169,41 +170,48 @@ class FanMenuScene {
     var isOpen: Bool = false
     
     func open() {
-        isOpen = true
-
-        let scale = fanMenu.menuRadius / fanMenu.radius
+        updateState(open: true)
+    }
+    
+    func close() {
+        updateState(open: false)
+    }
+    
+    func updateState(open: Bool) {
+        isOpen = open
+        
+        let scale = isOpen ? fanMenu.menuRadius / fanMenu.radius : fanMenu.radius / fanMenu.menuRadius
         let backgroundAnimation = self.backgroundCircle.placeVar.animation(
             to: Transform.scale(sx: scale, sy: scale),
             during: fanMenu.duration
         )
         
-        let expandAnimation = self.buttonsNode.contents.enumerated().map { (index, node) in
-            return [
-                node.opacityVar.animation(to: 1.0, during: fanMenu.duration),
+        let nodes = isOpen ? self.buttonsNode.contents.enumerated() : self.buttonsNode.contents.reversed().enumerated()
+        let expandAnimation = nodes.map { (index, node) in
+            let transform = isOpen ? self.expandPlace(index: index) : Transform.identity
+            let mainAnimation =  [
+                node.opacityVar.animation(to: isOpen ? 1.0 : 0.0, during: fanMenu.duration),
                 node.placeVar.animation(
-                    to: self.expandPlace(index: index),
+                    to: transform,
                     during: fanMenu.duration
-                ).easing(Easing.easeOut)
-            ].combine().delay(fanMenu.delay * Double(index))
-        }.combine()
+                    ).easing(Easing.easeOut)
+                ].combine()
+            
+            let filterOpacity = isOpen ? 0.0 : 1.0
+            let fillerAnimation = node.opacityVar.animation(from: filterOpacity, to: filterOpacity, during: fanMenu.delay * Double(index))
+            return [fillerAnimation, mainAnimation].sequence()
+            }.combine()
         
         // stub
         let buttonAnimation = self.buttonNode.opacityVar.animation(
             to: 1.0,
             during: fanMenu.duration
         )
+        
         animation = [backgroundAnimation, expandAnimation, buttonAnimation].combine()
         animation?.play()
     }
-    
-    func close() {
-        isOpen = false
-        
-        if let animationVal = self.animation {
-            self.animation = animationVal.reverse()
-            animation?.play()
-        }
-    }
+
     
     class func createFanButtonNode(button: FanMenuButton, fanMenu: FanMenu) -> Group {
         var contents: [Node] = [
@@ -240,7 +248,7 @@ class FanMenuScene {
         let interval = endValue - startValue
         
         var step: Double = 0.0
-        if interval.truncatingRemainder(dividingBy: 2*M_PI) < 0.00001 {
+        if interval.truncatingRemainder(dividingBy: 2 * Double.pi) < 0.00001 {
             // full circle
             step = interval / size
         } else {

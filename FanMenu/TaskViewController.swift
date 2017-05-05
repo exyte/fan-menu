@@ -21,9 +21,10 @@ class TaskViewController: UIViewController {
         }
         
         fanMenu.menuRadius = 70.0
-        fanMenu.duration = 0.35
-        fanMenu.interval = (M_PI, 2 * M_PI)
+        fanMenu.duration = 2.0
+        fanMenu.interval = (Double.pi, 2 * Double.pi)
         fanMenu.radius = 15.0
+        fanMenu.menuBackground = Color.red
         
         fanMenu.onButtonPressed = { button in
             self.hideTitle()
@@ -36,7 +37,7 @@ class TaskViewController: UIViewController {
             }
         }
         
-        fanMenu.transform = CGAffineTransform(rotationAngle: CGFloat(3 * M_PI/2.0))
+        fanMenu.transform = CGAffineTransform(rotationAngle: CGFloat(3 * Double.pi/2.0))
     }
     
     func hideTitle() {

@@ -31,7 +31,7 @@ class ShopViewController: UIViewController {
         
         fanMenu.menuRadius = 100.0
         fanMenu.duration = 0.35
-        fanMenu.interval = (M_PI + M_PI/4, M_PI + 3 * M_PI/4)
+        fanMenu.interval = (Double.pi + Double.pi/4, Double.pi + 3 * Double.pi/4)
         fanMenu.radius = 25.0
         fanMenu.delay = 0.0
         
