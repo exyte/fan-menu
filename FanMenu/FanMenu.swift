@@ -197,6 +197,10 @@ class FanMenuScene {
                     ).easing(Easing.easeOut)
                 ].combine()
             
+            if index == 0 {
+                return mainAnimation
+            }
+            
             let filterOpacity = isOpen ? 0.0 : 1.0
             let fillerAnimation = node.opacityVar.animation(from: filterOpacity, to: filterOpacity, during: fanMenu.delay * Double(index))
             return [fillerAnimation, mainAnimation].sequence()
@@ -205,7 +209,7 @@ class FanMenuScene {
         // stub
         let buttonAnimation = self.buttonNode.opacityVar.animation(
             to: 1.0,
-            during: fanMenu.duration
+            during: fanMenu.duration + fanMenu.delay * Double(buttonsNode.contents.count - 1)
         )
         
         animation = [backgroundAnimation, expandAnimation, buttonAnimation].combine()
