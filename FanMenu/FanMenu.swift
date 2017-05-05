@@ -194,8 +194,8 @@ class FanMenuScene {
                 node.placeVar.animation(
                     to: transform,
                     during: fanMenu.duration
-                    ).easing(Easing.easeOut)
-                ].combine()
+                ).easing(Easing.easeOut)
+            ].combine()
             
             if index == 0 {
                 return mainAnimation
@@ -204,7 +204,7 @@ class FanMenuScene {
             let filterOpacity = isOpen ? 0.0 : 1.0
             let fillerAnimation = node.opacityVar.animation(from: filterOpacity, to: filterOpacity, during: fanMenu.delay * Double(index))
             return [fillerAnimation, mainAnimation].sequence()
-            }.combine()
+        }.combine()
         
         // stub
         let buttonAnimation = self.buttonNode.opacityVar.animation(
