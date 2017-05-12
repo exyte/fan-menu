@@ -1,24 +1,15 @@
 PODS:
-  - Macaw (0.8.1):
+  - Macaw (0.8.2):
     - SWXMLHash (~> 3.0.0)
   - SWXMLHash (3.0.4)
 
 DEPENDENCIES:
-  - Macaw (from `https://github.com/exyte/Macaw.git`)
-
-EXTERNAL SOURCES:
-  Macaw:
-    :git: https://github.com/exyte/Macaw.git
-
-CHECKOUT OPTIONS:
-  Macaw:
-    :commit: 43e5e62cc34d595d00f315b8534863875c72d23b
-    :git: https://github.com/exyte/Macaw.git
+  - Macaw (= 0.8.2)
 
 SPEC CHECKSUMS:
-  Macaw: 84dc684cd9da77e322b9a805c63e1832a2829c70
+  Macaw: d01bec971b24be4232895d08482a791c403ce513
   SWXMLHash: 29d20b84692fc319ea8ed933058fe7d8d005139b
 
-PODFILE CHECKSUM: 92f8f2ee4e0d8d5dfb46a279b839276206704b16
+PODFILE CHECKSUM: 1e7f2124ba4b0cbf58915442dc0313af4df02500
 
 COCOAPODS: 1.1.1

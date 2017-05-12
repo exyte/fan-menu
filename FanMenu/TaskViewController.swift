@@ -21,10 +21,9 @@ class TaskViewController: UIViewController {
         }
         
         fanMenu.menuRadius = 70.0
-        fanMenu.duration = 2.0
+        fanMenu.duration = 0.2
         fanMenu.interval = (Double.pi, 2 * Double.pi)
         fanMenu.radius = 15.0
-        fanMenu.menuBackground = Color.red
         
         fanMenu.onButtonPressed = { button in
             self.hideTitle()

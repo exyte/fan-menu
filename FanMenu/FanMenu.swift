@@ -133,7 +133,6 @@ class FanMenuScene {
         }
         
         buttonsNode = fanMenu.items.map {
-            print($0.id)
             return FanMenuScene.createFanButtonNode(button: $0, fanMenu: fanMenu)
         }.group()
         
@@ -186,7 +185,7 @@ class FanMenuScene {
             during: fanMenu.duration
         )
         
-        let nodes = isOpen ? self.buttonsNode.contents.enumerated() : self.buttonsNode.contents.reversed().enumerated()
+        let nodes = self.buttonsNode.contents.enumerated()
         let expandAnimation = nodes.map { (index, node) in
             let transform = isOpen ? self.expandPlace(index: index) : Transform.identity
             let mainAnimation =  [
