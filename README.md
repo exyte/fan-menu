@@ -1,4 +1,4 @@
-# FanMenu
+# fan-menu
 Menu with a circular layout based on [Macaw](https://github.com/exyte/Macaw). This project is maintained by [exyte](https://www.exyte.com).
 
 <img src="http://i.imgur.com/ihN9FIb.gif" height="500"> <img src="http://i.imgur.com/ZHTmtcn.gif" height="500"> <img src="http://i.imgur.com/KslbTC5.gif" height="500">
@@ -70,16 +70,16 @@ fanMenu.close()
 
 ## Customization
 
-FanMenu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift library. Because of that FanMenu could be easily modified and improved for your purposes. 
+Fan-menu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift library. Because of that fan-menu could be easily modified and improved for your purposes. 
 
-All source code is in one single file called FanMenuView.swift. To modify menu simply copy this file and apply necessary changes. With FanMenu and Macaw you could make awesome menus!
+All source code is in one single file called FanMenuView.swift. To modify menu simply copy this file and apply necessary changes. With fan-menu and Macaw you could make awesome menus!
 
 <img src="http://i.imgur.com/w2OK6Db.gif" height="500">
 
 ## Examples
 
-To try FanMenu examples:
-- Clone the repo `git@github.com:exyte/FanMenu.git`
+To try fan-menu examples:
+- Clone the repo `git@github.com:exyte/fan-menu.git`
 - Open terminal and run `cd <FanMenuRepo>/`
 - Run `pod install` to install all dependencies
 - Run open `FanMenu.xcworkspace/` to open project in the Xcode
