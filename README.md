@@ -83,7 +83,6 @@ To try fan-menu examples:
 - Open terminal and run `cd <FanMenuRepo>/`
 - Run `pod install` to install all dependencies
 - Run open `FanMenu.xcworkspace/` to open project in the Xcode
-- Select required controller as Initial Controller in storyboard
 - Try it!
 
 We have next examples:
