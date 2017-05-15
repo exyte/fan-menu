@@ -1,7 +1,7 @@
 # fan-menu
 Menu with a circular layout based on [Macaw](https://github.com/exyte/Macaw). This project is maintained by [exyte](https://www.exyte.com).
 
-<img src="http://i.imgur.com/ihN9FIb.gif" height="500"> <img src="http://i.imgur.com/ZHTmtcn.gif" height="500"> <img src="http://i.imgur.com/KslbTC5.gif" height="500">
+<img src="http://i.imgur.com/o6tBKW6.gif" height="500"> <img src="http://i.imgur.com/Hg0GWAz.gif" height="500"> <img src="http://i.imgur.com/erRavyB.gif" height="500">
 
 # Usage
 1. Create `UIView` in your storyboard or programatically.
@@ -74,7 +74,7 @@ Fan-menu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift
 
 All source code is in one single file called FanMenuView.swift. To modify menu simply copy this file and apply necessary changes. With fan-menu and Macaw you could make awesome menus!
 
-<img src="http://i.imgur.com/w2OK6Db.gif" height="500">
+<img src="http://i.imgur.com/1JXF60f.gif" height="500">
 
 ## Examples
 
