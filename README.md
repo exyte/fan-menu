@@ -45,7 +45,7 @@ fanMenu.items = [
 ```
 6. Configure optional parameters
 ```swift
-// distance between center button and buttons
+// distance between button and items
 fanMenu.menuRadius = 90.0
 
 // animation duration
