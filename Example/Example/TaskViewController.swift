@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import Macaw
+import FanMenu
 
 class TaskViewController: UIViewController {
     @IBOutlet weak var fanMenu: FanMenu!

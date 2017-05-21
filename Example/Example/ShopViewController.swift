@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import FanMenu
 import Macaw
 
 class ShopViewController: UIViewController {

@@ -2,9 +2,15 @@ import Foundation
 import Macaw
 
 public struct FanMenuButton {
-    let id: String
-    let image: String
-    let color: Color
+    public let id: String
+    public let image: String
+    public let color: Color
+    
+    public init(id: String, image: String, color: Color) {
+        self.id = id
+        self.image = image
+        self.color = color
+    }
 }
 
 public class FanMenu: MacawView {

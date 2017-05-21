@@ -13,7 +13,6 @@
 		5792F0561ED16FAE005EFE57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5792F04C1ED16FAE005EFE57 /* Main.storyboard */; };
 		5792F0571ED16FAE005EFE57 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792F04E1ED16FAE005EFE57 /* CustomViewController.swift */; };
 		5792F0581ED16FAE005EFE57 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792F04F1ED16FAE005EFE57 /* FinanceViewController.swift */; };
-		5792F0591ED16FAE005EFE57 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5792F0501ED16FAE005EFE57 /* Info.plist */; };
 		5792F05A1ED16FAE005EFE57 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792F0511ED16FAE005EFE57 /* ShopViewController.swift */; };
 		5792F05B1ED16FAE005EFE57 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792F0521ED16FAE005EFE57 /* TaskViewController.swift */; };
 		A38523FC022F2F617E083992 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6C0445EDBF94DE5BD85EFE /* Pods_Example.framework */; };
@@ -160,7 +159,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5792F0591ED16FAE005EFE57 /* Info.plist in Resources */,
 				5792F0561ED16FAE005EFE57 /* Main.storyboard in Resources */,
 				5792F0541ED16FAE005EFE57 /* Assets.xcassets in Resources */,
 				5792F0551ED16FAE005EFE57 /* LaunchScreen.storyboard in Resources */,
@@ -182,7 +180,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D7417B380A268A91AC1739DF /* [CP] Copy Pods Resources */ = {
@@ -351,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D784B43273A9BB95227201C7 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -364,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8AC8FD5D18FFB7B65BB2B623 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
