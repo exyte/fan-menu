@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mny-RI-OMl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Xuv-Jb-6ub">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Finance View Controller-->
         <scene sceneID="E0y-rY-x46">
             <objects>
-                <viewController id="8kE-Id-nzg" customClass="FinanceViewController" customModule="FanMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinanceViewController" id="8kE-Id-nzg" customClass="FinanceViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hE8-Vr-kva"/>
                         <viewControllerLayoutGuide type="bottom" id="Qwb-Bw-zbD"/>
@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="82" width="375" height="585"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IncomeCell" rowHeight="90" id="hA6-To-i0S" customClass="TransactionCell" customModule="FanMenu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IncomeCell" rowHeight="90" id="hA6-To-i0S" customClass="TransactionCell" customModule="Example" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hA6-To-i0S" id="K9P-xo-IkW">
@@ -100,7 +100,7 @@
                                             <outlet property="transactionImage" destination="rxU-Sg-2xT" id="OG7-5W-S6y"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OutcomeCell" rowHeight="90" id="fQ8-Dv-4T6" customClass="TransactionCell" customModule="FanMenu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OutcomeCell" rowHeight="90" id="fQ8-Dv-4T6" customClass="TransactionCell" customModule="Example" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="118" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fQ8-Dv-4T6" id="HFH-7h-5Rn">
@@ -166,7 +166,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-fP-w63" customClass="FanMenu" customModule="FanMenu" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-fP-w63" customClass="FanMenu" customModule="FanMenu">
                                 <rect key="frame" x="0.0" y="487" width="375" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="yup-jd-4tG"/>
@@ -199,10 +199,18 @@
             </objects>
             <point key="canvasLocation" x="-346" y="145"/>
         </scene>
+        <!--Main Controller-->
+        <scene sceneID="bZC-I6-Dq1">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Xuv-Jb-6ub" customClass="MainController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eqn-OL-lMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-331" y="945"/>
+        </scene>
         <!--Task View Controller-->
         <scene sceneID="qCP-8A-Sx8">
             <objects>
-                <viewController id="2V8-2r-gov" customClass="TaskViewController" customModule="FanMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskViewController" id="2V8-2r-gov" customClass="TaskViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="apB-mg-U9P"/>
                         <viewControllerLayoutGuide type="bottom" id="bmo-7P-Ng4"/>
@@ -345,7 +353,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xtu-2g-N8I" customClass="FanMenu" customModule="FanMenu" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xtu-2g-N8I" customClass="FanMenu" customModule="FanMenu">
                                 <rect key="frame" x="220" y="211" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="3jQ-xI-1xM"/>
@@ -401,7 +409,7 @@
         <!--Shop View Controller-->
         <scene sceneID="U95-Gi-Nur">
             <objects>
-                <viewController id="xaj-iG-Sgl" customClass="ShopViewController" customModule="FanMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShopViewController" id="xaj-iG-Sgl" customClass="ShopViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FaN-nL-Emn"/>
                         <viewControllerLayoutGuide type="bottom" id="h4Y-yn-N0G"/>
@@ -1042,7 +1050,7 @@
                                     <constraint firstItem="50L-xd-1NW" firstAttribute="top" secondItem="rPV-Qp-rmn" secondAttribute="bottom" constant="20" id="zAi-Mh-FP1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0w-Fu-6Xn" customClass="FanMenu" customModule="FanMenu" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0w-Fu-6Xn" customClass="FanMenu" customModule="FanMenu">
                                 <rect key="frame" x="68" y="497" width="240" height="240"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1101,7 +1109,7 @@
         <!--Custom View Controller-->
         <scene sceneID="6hj-mz-BA8">
             <objects>
-                <viewController id="mny-RI-OMl" customClass="CustomViewController" customModule="FanMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomViewController" id="mny-RI-OMl" customClass="CustomViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qbq-SF-Kci"/>
                         <viewControllerLayoutGuide type="bottom" id="TSk-EV-4p6"/>
@@ -1110,7 +1118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRc-Vk-QRU" customClass="CustomMenu" customModule="FanMenu" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRc-Vk-QRU" customClass="CustomMenu" customModule="Example" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>

@@ -15,6 +15,7 @@
 		5792F0581ED16FAE005EFE57 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792F04F1ED16FAE005EFE57 /* FinanceViewController.swift */; };
 		5792F05A1ED16FAE005EFE57 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792F0511ED16FAE005EFE57 /* ShopViewController.swift */; };
 		5792F05B1ED16FAE005EFE57 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792F0521ED16FAE005EFE57 /* TaskViewController.swift */; };
+		5792F05D1ED17949005EFE57 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5792F05C1ED17949005EFE57 /* MainController.swift */; };
 		A38523FC022F2F617E083992 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6C0445EDBF94DE5BD85EFE /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		5792F0501ED16FAE005EFE57 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5792F0511ED16FAE005EFE57 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		5792F0521ED16FAE005EFE57 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		5792F05C1ED17949005EFE57 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		8AC8FD5D18FFB7B65BB2B623 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		D784B43273A9BB95227201C7 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				5792F0501ED16FAE005EFE57 /* Info.plist */,
 				5792F0511ED16FAE005EFE57 /* ShopViewController.swift */,
 				5792F0521ED16FAE005EFE57 /* TaskViewController.swift */,
+				5792F05C1ED17949005EFE57 /* MainController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				5792F0531ED16FAE005EFE57 /* AppDelegate.swift in Sources */,
 				5792F05B1ED16FAE005EFE57 /* TaskViewController.swift in Sources */,
 				5792F0581ED16FAE005EFE57 /* FinanceViewController.swift in Sources */,
+				5792F05D1ED17949005EFE57 /* MainController.swift in Sources */,
 				5792F0571ED16FAE005EFE57 /* CustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
