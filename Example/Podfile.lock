@@ -1,0 +1,23 @@
+PODS:
+  - FanMenu (0.6.0):
+    - Macaw
+  - Macaw (0.8.2):
+    - SWXMLHash (~> 3.0.0)
+  - SWXMLHash (3.0.5)
+
+DEPENDENCIES:
+  - FanMenu (from `../`)
+  - Macaw (= 0.8.2)
+
+EXTERNAL SOURCES:
+  FanMenu:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FanMenu: 59a03265726dee1c95d00e9f6432a57f2d2f10a9
+  Macaw: d01bec971b24be4232895d08482a791c403ce513
+  SWXMLHash: 701f7d07c032089b9ff34e0352bd4fed1a24652a
+
+PODFILE CHECKSUM: ebc157133e2cebecb868612ec2665d36d6b9e9d8
+
+COCOAPODS: 1.1.1
