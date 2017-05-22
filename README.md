@@ -69,7 +69,7 @@ fanMenu.close()
 
 Fan-menu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift library. Because of that fan-menu could be easily modified and improved for your purposes.
 
-All source code is in one single file called FanMenuView.swift. To modify menu simply copy this file and apply necessary changes. With fan-menu and Macaw you could make awesome menus!
+All source code is in one single file called FanMenu.swift. To modify menu simply copy this file and apply necessary changes. With fan-menu and Macaw you could make awesome menus!
 
 <img src="http://i.imgur.com/1JXF60f.gif" height="500">
 
@@ -84,13 +84,13 @@ To try fan-menu examples:
 
 We have next examples:
 
-- [FinanceViewController.swift](https://github.com/exyte/FanMenu/blob/master/FanMenu/FinanceViewController.swift)
+- [FinanceViewController.swift](https://github.com/exyte/fan-menu/blob/master/Example/Example/FinanceViewController.swift)
 Accounting & Financial Management. Inspired by [Yingfang Xie](https://dribbble.com/Melodyblue).
-- [TaskViewController.swift](https://github.com/exyte/FanMenu/blob/master/FanMenu/TaskViewController.swift)
+- [TaskViewController.swift](https://github.com/exyte/fan-menu/blob/master/Example/Example/TaskViewController.swift)
 Color Coding Microinteraction. Insipred by [Filippos Protogeridis](https://dribbble.com/protogeridis).
-- [ShopViewController.swift](https://github.com/exyte/FanMenu/blob/master/FanMenu/ShopViewController.swift)
+- [ShopViewController.swift](https://github.com/exyte/fan-menu/blob/master/Example/Example/ShopViewController.swift)
 Inspired by [Tice](https://dribbble.com/Tice).
-- [CustomViewController.swift](https://github.com/exyte/CirculoMenu/blob/master/Circulo/CustomViewController.swift) Inspired by awesome Ramotion control [circle-menu](https://github.com/Ramotion/circle-menu)
+- [CustomViewController.swift](https://github.com/exyte/fan-menu/blob/master/Example/Example/CustomViewController.swift) Inspired by awesome Ramotion control [circle-menu](https://github.com/Ramotion/circle-menu)
 
 ## Installation
 
@@ -102,13 +102,11 @@ pod "~> FanMenu", "0.6.0"
 
 *Carthage*
 
-```ogdl
-github "Exyte/FanMenu" ~> 0.6.0
-```
+Coming soon!
 
 *Manually*
 
-Drop [FanMenuView.swift](https://github.com/exyte/fan-menu/blob/master/Sources/FanMenu.swift) in your project.
+Drop [FanMenu.swift](https://github.com/exyte/fan-menu/blob/master/Sources/FanMenu.swift) in your project.
 
 ## Requirements
 
