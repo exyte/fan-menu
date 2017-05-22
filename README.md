@@ -32,10 +32,11 @@ fanMenu.items = [
 ```
 5. Add event handler
 ```swift
+// call before animation
 fanMenu.onItemDidClick = { button in
   print("ItemDidClick: \(button.id)")
 }
-
+// call after animation
 fanMenu.onItemWillClick = { button in
   print("ItemWillClick: \(button.id)")
 }
