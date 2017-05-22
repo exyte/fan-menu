@@ -82,12 +82,12 @@
 				5792F0491ED16FAE005EFE57 /* Assets.xcassets */,
 				5792F04A1ED16FAE005EFE57 /* LaunchScreen.storyboard */,
 				5792F04C1ED16FAE005EFE57 /* Main.storyboard */,
+				5792F05C1ED17949005EFE57 /* MainController.swift */,
 				5792F04E1ED16FAE005EFE57 /* CustomViewController.swift */,
 				5792F04F1ED16FAE005EFE57 /* FinanceViewController.swift */,
-				5792F0501ED16FAE005EFE57 /* Info.plist */,
 				5792F0511ED16FAE005EFE57 /* ShopViewController.swift */,
 				5792F0521ED16FAE005EFE57 /* TaskViewController.swift */,
-				5792F05C1ED17949005EFE57 /* MainController.swift */,
+				5792F0501ED16FAE005EFE57 /* Info.plist */,
 			);
 			path = Example;
 			sourceTree = "<group>";

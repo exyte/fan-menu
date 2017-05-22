@@ -85,7 +85,7 @@ public class FanMenu: MacawView {
         scene?.updateMenu(open: false)
     }
     
-    func updateNode() {
+    public func updateNode() {
         guard let _ = button else {
             self.node = Group()
             self.scene = .none
