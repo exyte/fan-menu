@@ -26,7 +26,7 @@ class TaskViewController: UIViewController {
         fanMenu.interval = (Double.pi, 2 * Double.pi)
         fanMenu.radius = 15.0
         
-        fanMenu.onItemDidClick = { button in
+        fanMenu.onItemWillClick = { button in
             self.hideTitle()
             if button.id != "main" {
                 let newColor = self.colors[Int(button.id)!]

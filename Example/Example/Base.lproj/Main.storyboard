@@ -1051,7 +1051,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0w-Fu-6Xn" customClass="FanMenu" customModule="FanMenu">
-                                <rect key="frame" x="68" y="497" width="240" height="240"/>
+                                <rect key="frame" x="68" y="507" width="240" height="240"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="9aC-Cp-nLb"/>
@@ -1074,7 +1074,7 @@
                             <constraint firstItem="w12-Mo-dWW" firstAttribute="top" secondItem="Cyt-0w-wvD" secondAttribute="bottom" constant="6" id="J0k-Ov-bcU"/>
                             <constraint firstItem="VfQ-Of-W8V" firstAttribute="top" secondItem="F4M-Nb-W2L" secondAttribute="top" id="JZ2-fz-M0q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7W3-48-57f" secondAttribute="trailing" constant="35" id="Jd9-3Y-5py"/>
-                            <constraint firstItem="h4Y-yn-N0G" firstAttribute="top" secondItem="l0w-Fu-6Xn" secondAttribute="bottom" constant="-70" id="Jfd-bM-sRJ"/>
+                            <constraint firstItem="h4Y-yn-N0G" firstAttribute="top" secondItem="l0w-Fu-6Xn" secondAttribute="bottom" constant="-80" id="Jfd-bM-sRJ"/>
                             <constraint firstItem="qJ5-tC-GJ6" firstAttribute="top" secondItem="JjN-hC-IhY" secondAttribute="bottom" constant="6" id="NCu-pB-fvD"/>
                             <constraint firstAttribute="trailing" secondItem="qJ5-tC-GJ6" secondAttribute="trailing" constant="20" id="NL8-31-BVk"/>
                             <constraint firstItem="wKt-Zz-nF4" firstAttribute="top" secondItem="0Cx-zv-vtK" secondAttribute="bottom" constant="5" id="NrV-7k-VKL"/>

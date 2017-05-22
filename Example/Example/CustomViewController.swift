@@ -153,7 +153,9 @@ class CustomButtonsScene {
         node.place = place
         
         node.onTouchPressed { _ in
-            self.select(node: node, alpha: alpha, color: data.2, customMenu: customMenu)
+            if self.customMenu.scene!.isOpen {
+                self.select(node: node, alpha: alpha, color: data.2, customMenu: customMenu)
+            }
         }
         return node
     }

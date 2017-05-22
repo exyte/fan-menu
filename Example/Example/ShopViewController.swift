@@ -36,7 +36,7 @@ class ShopViewController: UIViewController {
         fanMenu.radius = 25.0
         fanMenu.delay = 0.0
         
-        fanMenu.onItemDidClick = { button in
+        fanMenu.onItemWillClick = { button in
             self.showView()
         }
     }

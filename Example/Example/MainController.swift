@@ -2,10 +2,10 @@ import UIKit
 
 class MainController: UIPageViewController, UIPageViewControllerDataSource {
     private let controllerNames = [
-        "CustomViewController",
         "FinanceViewController",
         "ShopViewController",
-        "TaskViewController"
+        "TaskViewController",
+        "CustomViewController"
     ]
     
     private var controllers = [UIViewController]()
