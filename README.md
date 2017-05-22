@@ -1,3 +1,7 @@
+[![Version](https://img.shields.io/cocoapods/v/FanMenu.svg?style=flat)](http://cocoapods.org/pods/FanMenu)
+[![License](https://img.shields.io/cocoapods/l/FanMenu.svg?style=flat)](http://cocoapods.org/pods/FanMenu)
+[![Platform](https://img.shields.io/cocoapods/p/FanMenu.svg?style=flat)](http://cocoapods.org/pods/FanMenu)
+
 # FanMenu
 Menu with a circular layout based on [Macaw](https://github.com/exyte/Macaw). This project is maintained by [exyte](https://www.exyte.com).
 
