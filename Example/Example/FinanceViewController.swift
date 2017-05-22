@@ -54,16 +54,13 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         fanMenu.duration = 0.2
         fanMenu.delay = 0.05
         fanMenu.interval = (Double.pi, 2 * Double.pi)
-        
-        fanMenu.onButtonPressed = { button in
-            switch button.id {
-            case "exchange":
-                print("open exchange screen")
-            case "visa":
-                print("open cards screen")
-            default:
-                print("other")
-            }
+
+        fanMenu.onItemDidClick = { button in
+            print("ItemDidClick: \(button.id)")
+        }
+
+        fanMenu.onItemWillClick = { button in
+            print("ItemWillClick: \(button.id)")
         }
     }
     

@@ -63,11 +63,12 @@ public class FanMenu: MacawView {
         }
     }
     
-    public var onButtonPressed: ((_ button: FanMenuButton) -> ())?
+    public var onItemWillClick: ((_ button: FanMenuButton) -> ())?
+    public var onItemDidClick: ((_ button: FanMenuButton) -> ())?
     
     var scene: FanMenuScene?
     
-    var isOpen: Bool {
+    public var isOpen: Bool {
         get {
             if let sceneValue = scene {
                 return sceneValue.isOpen
@@ -76,12 +77,12 @@ public class FanMenu: MacawView {
         }
     }
     
-    func open() {
-        scene?.open()
+    public func open() {
+        scene?.updateMenu(open: true)
     }
     
-    func close() {
-        scene?.close()
+    public func close() {
+        scene?.updateMenu(open: false)
     }
     
     func updateNode() {
@@ -161,28 +162,28 @@ class FanMenuScene {
                     return
                 }
             }
-            
-            if self.isOpen {
-                self.close()
-            } else {
-                self.open()
-            }
-            self.fanMenu.onButtonPressed?(button)
+            self.updateMenu(open: !self.isOpen)
         }
     }
     
     var animation: Animation?
     var isOpen: Bool = false
     
-    func open() {
-        updateState(open: true)
+    func updateMenu(open: Bool) {
+        if let button = fanMenu.button {
+            self.fanMenu.onItemWillClick?(button)
+            
+            self.updateState(open: open) {
+                self.fanMenu.onItemDidClick?(button)
+            }
+        }
     }
     
-    func close() {
-        updateState(open: false)
-    }
-    
-    func updateState(open: Bool) {
+    func updateState(open: Bool, callback: @escaping () -> Void) {
+        if open == isOpen {
+            return
+        }
+
         isOpen = open
         
         let scale = isOpen ? fanMenu.menuRadius / fanMenu.radius : fanMenu.radius / fanMenu.menuRadius
@@ -219,6 +220,9 @@ class FanMenuScene {
         )
         
         animation = [backgroundAnimation, expandAnimation, buttonAnimation].combine()
+        animation?.onComplete {
+            callback()
+        }
         animation?.play()
     }
 
@@ -244,10 +248,12 @@ class FanMenuScene {
         node.opacity = 0.0
         
         node.onTouchPressed { _ in
-            fanMenu.onButtonPressed?(button)
-            fanMenu.close()
+            fanMenu.onItemWillClick?(button)
+            
+            fanMenu.scene?.updateState(open: false) {
+                fanMenu.onItemDidClick?(button)
+            }
         }
-        
         return node
     }
     

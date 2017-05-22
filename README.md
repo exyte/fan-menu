@@ -32,15 +32,12 @@ fanMenu.items = [
 ```
 5. Add event handler
 ```swift
- fanMenu.onButtonPressed = { button in
-  switch button.id {
-    case "exchange_id":
-      print("open exchange screen")
-    case "visa_id":
-      print("open cards screen")
-    default:
-      print("other")
-  }
+fanMenu.onItemDidClick = { button in
+  print("ItemDidClick: \(button.id)")
+}
+
+fanMenu.onItemWillClick = { button in
+  print("ItemWillClick: \(button.id)")
 }
 ```
 6. Configure optional parameters
@@ -70,7 +67,7 @@ fanMenu.close()
 
 ## Customization
 
-Fan-menu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift library. Because of that fan-menu could be easily modified and improved for your purposes. 
+Fan-menu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift library. Because of that fan-menu could be easily modified and improved for your purposes.
 
 All source code is in one single file called FanMenuView.swift. To modify menu simply copy this file and apply necessary changes. With fan-menu and Macaw you could make awesome menus!
 
@@ -80,7 +77,7 @@ All source code is in one single file called FanMenuView.swift. To modify menu s
 
 To try fan-menu examples:
 - Clone the repo `git@github.com:exyte/fan-menu.git`
-- Open terminal and run `cd <FanMenuRepo>/`
+- Open terminal and run `cd <FanMenuRepo>/Example/`
 - Run `pod install` to install all dependencies
 - Run open `FanMenu.xcworkspace/` to open project in the Xcode
 - Try it!
@@ -111,7 +108,7 @@ github "Exyte/FanMenu" ~> 0.6.0
 
 *Manually*
 
-Drop [FanMenuView.swift](https://github.com/exyte/fan-menu/blob/master/FanMenu/FanMenu.swift) in your project.
+Drop [FanMenuView.swift](https://github.com/exyte/fan-menu/blob/master/Sources/FanMenu.swift) in your project.
 
 ## Requirements
 
