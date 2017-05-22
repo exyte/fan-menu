@@ -1,4 +1,4 @@
-# fan-menu
+# FanMenu
 Menu with a circular layout based on [Macaw](https://github.com/exyte/Macaw). This project is maintained by [exyte](https://www.exyte.com).
 
 <img src="http://i.imgur.com/o6tBKW6.gif" height="500"> <img src="http://i.imgur.com/Hg0GWAz.gif" height="500"> <img src="http://i.imgur.com/erRavyB.gif" height="500">
@@ -67,7 +67,7 @@ fanMenu.close()
 
 ## Customization
 
-Fan-menu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift library. Because of that fan-menu could be easily modified and improved for your purposes.
+FanMenu bases on [Macaw](https://github.com/exyte/Macaw), vector graphics Swift library. Because of that fan-menu could be easily modified and improved for your purposes.
 
 All source code is in one single file called FanMenu.swift. To modify menu simply copy this file and apply necessary changes. With fan-menu and Macaw you could make awesome menus!
 
@@ -97,7 +97,7 @@ Inspired by [Tice](https://dribbble.com/Tice).
 *CocoaPods*
 
 ```ruby
-pod "~> FanMenu", "0.6.0"
+pod "FanMenu"
 ```
 
 *Manually*
