@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "FanMenu"
   s.version          = "0.6.0"
-  s.summary          = "Powerful and easy-to-use vector graphics library with SVG support written in Swift."
+  s.summary          = "Menu with a circular layout based on Macaw Edit."
 
   s.homepage         = 'https://github.com/exyte/fan-menu.git'
   s.license          = 'MIT'
