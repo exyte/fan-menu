@@ -100,13 +100,11 @@ Inspired by [Tice](https://dribbble.com/Tice).
 pod "~> FanMenu", "0.6.0"
 ```
 
-*Carthage*
-
-Coming soon!
-
 *Manually*
 
 Drop [FanMenu.swift](https://github.com/exyte/fan-menu/blob/master/Sources/FanMenu.swift) in your project.
+
+*Carthage is coming [soon](https://github.com/exyte/fan-menu/issues/9)!*
 
 ## Requirements
 
