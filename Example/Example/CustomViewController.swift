@@ -9,6 +9,12 @@ class CustomViewController: UIViewController {
         super.viewDidLoad()
         customMenu.updateNode()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        customMenu.updateNode()
+    }
 }
 
 class CustomMenu: MacawView {
