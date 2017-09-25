@@ -43,7 +43,7 @@ class TaskViewController: UIViewController {
     func hideTitle() {
         let newValue = !self.colorLabel.isHidden
         UIView.transition(
-            with: colorLabel, duration: 0.5, options: .transitionCrossDissolve, animations: { _ in
+            with: colorLabel, duration: 0.5, options: .transitionCrossDissolve, animations: {
                 self.colorLabel.isHidden = newValue
         }, completion: nil)
     }
