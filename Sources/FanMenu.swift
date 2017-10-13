@@ -126,7 +126,7 @@ class FanMenuScene {
         )
         
         buttonNode = [menuCircle].group()
-        if let uiImage = UIImage(named: button.image) {
+        if !button.image.isEmpty, let uiImage = UIImage(named: button.image) {
             menuIcon = Image(
                 src: button.image,
                 place: Transform.move(
@@ -234,7 +234,7 @@ class FanMenuScene {
                 fill: button.color
             )
         ]
-        if let uiImage = UIImage(named: button.image) {
+        if !button.image.isEmpty, let uiImage = UIImage(named: button.image) {
             let image = Image(
                 src: button.image,
                 place: Transform.move(
