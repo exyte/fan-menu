@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/exyte/fan-menu.git', :tag => s.version.to_s }
   s.social_media_url = 'http://exyte.com'
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '9.1'
   s.requires_arc = true
 
   s.source_files = [
