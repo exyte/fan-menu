@@ -101,6 +101,10 @@ public class FanMenu: MacawView {
         self.node = node
         self.scene = scene
     }
+    
+    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        return findNodeAt(location: point) != nil
+    }
 }
 
 class FanMenuScene {
