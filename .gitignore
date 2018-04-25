@@ -21,3 +21,4 @@ Pods/
 contents.xcworkspacedata
 .DS_Store
 Podfile.lock
+Carthage/
