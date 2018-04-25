@@ -1,6 +1,7 @@
 # FanMenu
 
 [![Version](https://img.shields.io/cocoapods/v/FanMenu.svg?style=flat)](http://cocoapods.org/pods/FanMenu)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-0473B3.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/FanMenu.svg?style=flat)](http://cocoapods.org/pods/FanMenu)
 [![Platform](https://img.shields.io/cocoapods/p/FanMenu.svg?style=flat)](http://cocoapods.org/pods/FanMenu)
 
@@ -106,11 +107,17 @@ Inspired by [Tice](https://dribbble.com/Tice).
 pod "FanMenu"
 ```
 
+*Carthage*
+
+## [Carthage](http://github.com/Carthage/Carthage)
+
+```ogdl
+github "Exyte/fan-menu"
+```
+
 *Manually*
 
 Drop [FanMenu.swift](https://github.com/exyte/fan-menu/blob/master/Sources/FanMenu.swift) in your project.
-
-*Carthage is coming [soon](https://github.com/exyte/fan-menu/issues/9)!*
 
 ## Requirements
 
