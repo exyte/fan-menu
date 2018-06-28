@@ -1,3 +1,4 @@
+platform :ios, '9.1'
 use_frameworks!
 
 target 'Example' do
