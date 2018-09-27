@@ -39,6 +39,8 @@ class ShopViewController: UIViewController {
         fanMenu.onItemWillClick = { button in
             self.showView()
         }
+        
+        fanMenu.backgroundColor = .clear
     }
     
     func showView() {

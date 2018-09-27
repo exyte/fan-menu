@@ -38,6 +38,8 @@ class TaskViewController: UIViewController {
         }
         
         fanMenu.transform = CGAffineTransform(rotationAngle: CGFloat(3 * Double.pi/2.0))
+        
+        fanMenu.backgroundColor = .clear
     }
     
     func hideTitle() {

@@ -62,6 +62,8 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         fanMenu.onItemWillClick = { button in
             print("ItemWillClick: \(button.id)")
         }
+        
+        fanMenu.backgroundColor = .clear
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
