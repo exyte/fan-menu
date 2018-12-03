@@ -46,11 +46,13 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
             FanMenuButton(
                 id: button.0,
                 image: "menu_\(button.0)",
-                color: Color(val: button.1)
+                color: Color(val: button.1),
+                title: "title",
+                titleColor: Color.yellow
             )
         }
         
-        fanMenu.menuRadius = 90.0
+        fanMenu.menuRadius = 120.0
         fanMenu.duration = 0.2
         fanMenu.delay = 0.05
         fanMenu.interval = (Double.pi, 2 * Double.pi)
