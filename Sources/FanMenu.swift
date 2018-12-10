@@ -1,15 +1,33 @@
 import Foundation
 import Macaw
 
+public enum FanMenuButtonTitlePosition {
+    case left
+    case right
+    case top
+    case bottom
+}
+
 public struct FanMenuButton {
     public let id: String
     public let image: String
     public let color: Color
+    public let title: String
+    public let titleColor: Color?
+    public let titlePosition: FanMenuButtonTitlePosition
     
-    public init(id: String, image: String, color: Color) {
+    public init(id: String,
+                image: String,
+                color: Color,
+                title: String = "",
+                titleColor: Color? = .none,
+                titlePosition: FanMenuButtonTitlePosition = .bottom) {
         self.id = id
         self.image = image
         self.color = color
+        self.title = title
+        self.titleColor = titleColor
+        self.titlePosition = titlePosition
     }
 }
 
@@ -58,6 +76,12 @@ public class FanMenu: MacawView {
     }
     
     public var menuBackground: Color? {
+        didSet {
+            updateNode()
+        }
+    }
+
+    public var buttonsTitleIndent: Double = 8.0 {
         didSet {
             updateNode()
         }
@@ -246,8 +270,48 @@ class FanMenuScene {
                     dy: -Double(uiImage.size.height) / 2
                 )
             )
+
+            if !button.title.isEmpty {
+
+                let place: Transform
+
+                let text = Text(text: button.title)
+
+                switch button.titlePosition {
+                case .right:
+                    place = Transform.move(
+                        dx: Double(uiImage.size.width) + fanMenu.buttonsTitleIndent,
+                        dy: -Double(uiImage.size.height) / 2
+                    )
+                case .left:
+                        place = Transform.move(
+                            dx: -Double(uiImage.size.width) - fanMenu.buttonsTitleIndent - text.bounds.w,
+                            dy: -Double(uiImage.size.height) / 2
+                    )
+                case .bottom:
+                        place = Transform.move(
+                            dx: -Double(uiImage.size.width) / 2,
+                            dy: Double(uiImage.size.height) + fanMenu.buttonsTitleIndent
+                    )
+                case .top:
+                        place = Transform.move(
+                            dx: -Double(uiImage.size.width) / 2,
+                            dy: -Double(uiImage.size.height) - fanMenu.buttonsTitleIndent - text.bounds.h
+                    )
+                }
+
+                if let textColor = button.titleColor {
+                    text.fill = textColor
+                }
+
+                text.place = place
+
+                contents.append(text)
+            }
+
             contents.append(image)
         }
+
         let node = Group(contents: contents)
         node.opacity = 0.0
         
