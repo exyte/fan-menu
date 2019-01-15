@@ -10,14 +10,14 @@ public enum FanMenuButtonTitlePosition {
 
 public struct FanMenuButton {
     public let id: String
-    public let image: String
+    public let image: UIImage?
     public let color: Color
     public let title: String
     public let titleColor: Color?
     public let titlePosition: FanMenuButtonTitlePosition
     
     public init(id: String,
-                image: String,
+                image: UIImage?,
                 color: Color,
                 title: String = "",
                 titleColor: Color? = .none,
@@ -154,9 +154,9 @@ class FanMenuScene {
         )
         
         buttonNode = [menuCircle].group()
-        if !button.image.isEmpty, let uiImage = UIImage(named: button.image) {
+        if let uiImage = button.image {
             menuIcon = Image(
-                src: button.image,
+                image: uiImage,
                 place: Transform.move(
                     dx: -Double(uiImage.size.width) / 2,
                     dy: -Double(uiImage.size.height) / 2
@@ -262,9 +262,9 @@ class FanMenuScene {
                 fill: button.color
             )
         ]
-        if !button.image.isEmpty, let uiImage = UIImage(named: button.image) {
+        if let uiImage = button.image {
             let image = Image(
-                src: button.image,
+                image: uiImage,
                 place: Transform.move(
                     dx: -Double(uiImage.size.width) / 2,
                     dy: -Double(uiImage.size.height) / 2
