@@ -119,7 +119,6 @@
 				5BAE20A720905924006BF277 /* Frameworks */,
 				5BAE20A820905924006BF277 /* Headers */,
 				5BAE20A920905924006BF277 /* Resources */,
-				5BAE20CF20905CAA006BF277 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -200,23 +199,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5BAE20CF20905CAA006BF277 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Macaw.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BAE20A620905924006BF277 /* Sources */ = {
