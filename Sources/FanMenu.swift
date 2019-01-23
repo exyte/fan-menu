@@ -15,19 +15,22 @@ public struct FanMenuButton {
     public let title: String
     public let titleColor: Color?
     public let titlePosition: FanMenuButtonTitlePosition
+    public let isTextOnSubstrate: Bool
     
     public init(id: String,
                 image: UIImage?,
                 color: Color,
                 title: String = "",
                 titleColor: Color? = .none,
-                titlePosition: FanMenuButtonTitlePosition = .bottom) {
+                titlePosition: FanMenuButtonTitlePosition = .bottom,
+                isTextOnSubstrate: Bool = false) {
         self.id = id
         self.image = image
         self.color = color
         self.title = title
         self.titleColor = titleColor
         self.titlePosition = titlePosition
+        self.isTextOnSubstrate = isTextOnSubstrate
     }
 }
 
@@ -256,12 +259,13 @@ class FanMenuScene {
 
     
     class func createFanButtonNode(button: FanMenuButton, fanMenu: FanMenu) -> Group {
-        var contents: [Node] = [
-            Shape(
-                form: Circle(r: fanMenu.radius),
-                fill: button.color
-            )
-        ]
+
+        var shapeNode: Node = Shape(
+            form: Circle(r: fanMenu.radius),
+            fill: button.color
+        )
+
+        var contents: [Node] = []
         if let uiImage = button.image {
             let image = Image(
                 image: uiImage,
@@ -274,8 +278,12 @@ class FanMenuScene {
             if !button.title.isEmpty {
 
                 let place: Transform
+                let origin: Point
 
                 let text = Text(text: button.title)
+
+                let width: Double
+                let height: Double
 
                 switch button.titlePosition {
                 case .right:
@@ -283,21 +291,37 @@ class FanMenuScene {
                         dx: Double(uiImage.size.width) + fanMenu.buttonsTitleIndent,
                         dy: -Double(uiImage.size.height) / 2
                     )
+
+                    width = Double(uiImage.size.width) + fanMenu.buttonsTitleIndent + text.bounds.w
+                    height = max(Double(uiImage.size.height), text.bounds.h)
+                    origin = Point(x: -Double(uiImage.size.width) / 2, y: -Double(uiImage.size.height) / 2)
                 case .left:
-                        place = Transform.move(
-                            dx: -Double(uiImage.size.width) - fanMenu.buttonsTitleIndent - text.bounds.w,
-                            dy: -Double(uiImage.size.height) / 2
+                    place = Transform.move(
+                        dx: -fanMenu.radius / 2 - fanMenu.buttonsTitleIndent - text.bounds.w,
+                        dy: -text.bounds.h / 2
                     )
+
+                    width = fanMenu.radius + fanMenu.buttonsTitleIndent + text.bounds.w + fanMenu.radius/2
+                    height = fanMenu.radius
+                    origin = Point(x: place.dx - fanMenu.radius/2, y: -fanMenu.radius / 2)
                 case .bottom:
-                        place = Transform.move(
-                            dx: -Double(uiImage.size.width) / 2,
-                            dy: Double(uiImage.size.height) + fanMenu.buttonsTitleIndent
+                    place = Transform.move(
+                        dx: -Double(uiImage.size.width) / 2,
+                        dy: Double(uiImage.size.height) + fanMenu.buttonsTitleIndent
                     )
+
+                    width = max(Double(uiImage.size.width), text.bounds.w)
+                    height = Double(uiImage.size.height) + fanMenu.buttonsTitleIndent + text.bounds.h
+                    origin = Point(x: -Double(uiImage.size.width) / 2, y: -Double(uiImage.size.height) / 2)
                 case .top:
-                        place = Transform.move(
-                            dx: -Double(uiImage.size.width) / 2,
-                            dy: -Double(uiImage.size.height) - fanMenu.buttonsTitleIndent - text.bounds.h
+                    place = Transform.move(
+                        dx: -Double(uiImage.size.width) / 2,
+                        dy: -Double(uiImage.size.height) - fanMenu.buttonsTitleIndent - text.bounds.h
                     )
+
+                    width = max(Double(uiImage.size.width), text.bounds.w)
+                    height = Double(uiImage.size.height) + fanMenu.buttonsTitleIndent + text.bounds.h
+                    origin = Point(x: place.dx, y: place.dy)
                 }
 
                 if let textColor = button.titleColor {
@@ -307,8 +331,15 @@ class FanMenuScene {
                 text.place = place
 
                 contents.append(text)
+
+                if button.isTextOnSubstrate {
+                    let rect = Rect(point: origin, size: Size(w: width, h: height))
+                    let rounded = RoundRect(rect: rect, rx: fanMenu.radius, ry: fanMenu.radius)
+                    shapeNode = Shape(form: rounded, fill: button.color)
+                }
             }
 
+            contents.insert(shapeNode, at: 0)
             contents.append(image)
         }
 

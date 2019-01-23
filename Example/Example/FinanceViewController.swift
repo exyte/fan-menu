@@ -46,7 +46,11 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
             FanMenuButton(
                 id: button.0,
                 image: UIImage(named: "menu_\(button.0)"),
-                color: Color(val: button.1)
+                color: Color(val: button.1),
+                title: "new",
+                titleColor: Color.black,
+                titlePosition: .left,
+                isTextOnSubstrate: true
             )
         }
         

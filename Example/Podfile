@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'Example' do
     pod 'FanMenu', :path => '../'
+    pod 'Macaw', :path => '~/Macaw'
 end
