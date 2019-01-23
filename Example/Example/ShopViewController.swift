@@ -13,19 +13,19 @@ class ShopViewController: UIViewController {
         
         fanMenu.button = FanMenuButton(
             id: "main",
-            image: "menu_plus",
+            image: UIImage(named: "menu_plus"),
             color: Color(val: 0xADADAD)
         )
         
         fanMenu.items = [
             FanMenuButton(
                 id: "photo",
-                image: "shop_photo",
+                image: UIImage(named: "shop_photo"),
                 color: Color(val: 0xCECBCB)
             ),
             FanMenuButton(
                 id: "gallery",
-                image: "shop_gallery",
+                image: UIImage(named: "shop_gallery"),
                 color: Color(val: 0xCECBCB)
             ),
         ]

@@ -13,10 +13,12 @@ class TaskViewController: UIViewController {
         super.viewDidLoad()
         
         fanMenu.button = mainButton(colorHex: 0x7C93FE)
-        fanMenu.items = colors.enumerated().map { (index, item) in
-            FanMenuButton(
+        fanMenu.items = colors.enumerated().map { arg -> FanMenuButton in
+
+            let (index, item) = arg
+            return FanMenuButton(
                 id: String(index),
-                image: "",
+                image: .none,
                 color: Color(val: item)
             )
         }
@@ -53,7 +55,7 @@ class TaskViewController: UIViewController {
     func mainButton(colorHex: Int) -> FanMenuButton {
         return FanMenuButton(
             id: "main",
-            image: "",
+            image: .none,
             color: Color(val: colorHex)
         )
     }

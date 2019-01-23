@@ -38,14 +38,14 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         fanMenu.button = FanMenuButton(
             id: "main",
-            image: "menu_plus",
+            image: UIImage(named: "menu_plus"),
             color: Color(val: 0x7C93FE)
         )
         
         fanMenu.items = items.map { button in
             FanMenuButton(
                 id: button.0,
-                image: "menu_\(button.0)",
+                image: UIImage(named: "menu_\(button.0)"),
                 color: Color(val: button.1)
             )
         }
