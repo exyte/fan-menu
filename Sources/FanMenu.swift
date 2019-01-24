@@ -29,6 +29,20 @@ public struct FanMenuButton {
         self.titleColor = titleColor
         self.titlePosition = titlePosition
     }
+
+    public init(id: String,
+                image: String,
+                color: Color,
+                title: String = "",
+                titleColor: Color? = .none,
+                titlePosition: FanMenuButtonTitlePosition = .bottom) {
+        self.init(id: id,
+                  image: UIImage(named: image),
+                  color: color,
+                  title: title,
+                  titleColor: titleColor,
+                  titlePosition: titlePosition)
+    }
 }
 
 public class FanMenu: MacawView {
@@ -169,7 +183,7 @@ class FanMenuScene {
         
         buttonsNode = fanMenu.items.map {
             return FanMenuScene.createFanButtonNode(button: $0, fanMenu: fanMenu)
-        }.group()
+            }.group()
         
         
         backgroundCircle = Shape(
@@ -228,8 +242,8 @@ class FanMenuScene {
                 node.placeVar.animation(
                     to: transform,
                     during: fanMenu.duration
-                ).easing(Easing.easeOut)
-            ].combine()
+                    ).easing(Easing.easeOut)
+                ].combine()
             
             let delay = fanMenu.delay * Double(index)
             if delay == 0.0 {
@@ -239,7 +253,7 @@ class FanMenuScene {
             let filterOpacity = isOpen ? 0.0 : 1.0
             let fillerAnimation = node.opacityVar.animation(from: filterOpacity, to: filterOpacity, during: delay)
             return [fillerAnimation, mainAnimation].sequence()
-        }.combine()
+            }.combine()
         
         // stub
         let buttonAnimation = self.buttonNode.opacityVar.animation(
@@ -284,19 +298,19 @@ class FanMenuScene {
                         dy: -Double(uiImage.size.height) / 2
                     )
                 case .left:
-                        place = Transform.move(
-                            dx: -Double(uiImage.size.width) - fanMenu.buttonsTitleIndent - text.bounds.w,
-                            dy: -Double(uiImage.size.height) / 2
+                    place = Transform.move(
+                        dx: -Double(uiImage.size.width) - fanMenu.buttonsTitleIndent - text.bounds.w,
+                        dy: -Double(uiImage.size.height) / 2
                     )
                 case .bottom:
-                        place = Transform.move(
-                            dx: -Double(uiImage.size.width) / 2,
-                            dy: Double(uiImage.size.height) + fanMenu.buttonsTitleIndent
+                    place = Transform.move(
+                        dx: -Double(uiImage.size.width) / 2,
+                        dy: Double(uiImage.size.height) + fanMenu.buttonsTitleIndent
                     )
                 case .top:
-                        place = Transform.move(
-                            dx: -Double(uiImage.size.width) / 2,
-                            dy: -Double(uiImage.size.height) - fanMenu.buttonsTitleIndent - text.bounds.h
+                    place = Transform.move(
+                        dx: -Double(uiImage.size.width) / 2,
+                        dy: -Double(uiImage.size.height) - fanMenu.buttonsTitleIndent - text.bounds.h
                     )
                 }
 
