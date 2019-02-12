@@ -14,7 +14,8 @@ Pod::Spec.new do |s|
   s.swift_version    = '4.2'
 
   s.source_files = [
-     'Sources/*.*'
+     'Sources/*.h',
+     'Sources/*.swift'
   ]
 
   s.dependency 'Macaw'
