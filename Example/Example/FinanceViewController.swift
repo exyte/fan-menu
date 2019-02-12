@@ -66,6 +66,12 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         fanMenu.backgroundColor = .clear
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        fanMenu.updateNode()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = self.data[indexPath.row]
         let cellClass = data.0 == "income" ? "IncomeCell" : "OutcomeCell"
