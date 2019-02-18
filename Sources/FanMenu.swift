@@ -124,7 +124,7 @@ public class FanMenu: MacawView {
     }
     
     public func updateNode() {
-        guard let _ = button else {
+        guard button != nil else {
             self.node = Group()
             self.scene = .none
             return
@@ -198,7 +198,7 @@ class FanMenuScene {
         
         node = [backgroundCircle, buttonsNode, buttonNode].group()
         
-        buttonNode.onTouchPressed { _ in
+        buttonNode.onTouchPressed { [unowned self] _ in
             if let animationValue = self.animation {
                 if animationValue.state() != .paused {
                     return
@@ -215,8 +215,8 @@ class FanMenuScene {
         if let button = fanMenu.button {
             self.fanMenu.onItemWillClick?(button)
             
-            self.updateState(open: open) {
-                self.fanMenu.onItemDidClick?(button)
+            self.updateState(open: open) { [weak self] in
+                self?.fanMenu.onItemDidClick?(button)
             }
         }
     }
@@ -329,7 +329,7 @@ class FanMenuScene {
         let node = Group(contents: contents)
         node.opacity = 0.0
         
-        node.onTouchPressed { _ in
+        node.onTouchPressed { [unowned fanMenu] _ in
             fanMenu.onItemWillClick?(button)
             
             fanMenu.scene?.updateState(open: false) {
