@@ -32,6 +32,20 @@ public struct FanMenuButton {
         self.titlePosition = titlePosition
         self.isTextOnSubstrate = isTextOnSubstrate
     }
+
+    public init(id: String,
+                image: String,
+                color: Color,
+                title: String = "",
+                titleColor: Color? = .none,
+                titlePosition: FanMenuButtonTitlePosition = .bottom) {
+        self.init(id: id,
+                  image: UIImage(named: image),
+                  color: color,
+                  title: title,
+                  titleColor: titleColor,
+                  titlePosition: titlePosition)
+    }
 }
 
 public class FanMenu: MacawView {
@@ -113,7 +127,7 @@ public class FanMenu: MacawView {
     }
     
     public func updateNode() {
-        guard let _ = button else {
+        guard button != nil else {
             self.node = Group()
             self.scene = .none
             return
@@ -172,7 +186,7 @@ class FanMenuScene {
         
         buttonsNode = fanMenu.items.map {
             return FanMenuScene.createFanButtonNode(button: $0, fanMenu: fanMenu)
-        }.group()
+            }.group()
         
         
         backgroundCircle = Shape(
@@ -187,7 +201,7 @@ class FanMenuScene {
         
         node = [backgroundCircle, buttonsNode, buttonNode].group()
         
-        buttonNode.onTouchPressed { _ in
+        buttonNode.onTouchPressed { [unowned self] _ in
             if let animationValue = self.animation {
                 if animationValue.state() != .paused {
                     return
@@ -204,8 +218,8 @@ class FanMenuScene {
         if let button = fanMenu.button {
             self.fanMenu.onItemWillClick?(button)
             
-            self.updateState(open: open) {
-                self.fanMenu.onItemDidClick?(button)
+            self.updateState(open: open) { [weak self] in
+                self?.fanMenu.onItemDidClick?(button)
             }
         }
     }
@@ -231,8 +245,8 @@ class FanMenuScene {
                 node.placeVar.animation(
                     to: transform,
                     during: fanMenu.duration
-                ).easing(Easing.easeOut)
-            ].combine()
+                    ).easing(Easing.easeOut)
+                ].combine()
             
             let delay = fanMenu.delay * Double(index)
             if delay == 0.0 {
@@ -242,7 +256,7 @@ class FanMenuScene {
             let filterOpacity = isOpen ? 0.0 : 1.0
             let fillerAnimation = node.opacityVar.animation(from: filterOpacity, to: filterOpacity, during: delay)
             return [fillerAnimation, mainAnimation].sequence()
-        }.combine()
+            }.combine()
         
         // stub
         let buttonAnimation = self.buttonNode.opacityVar.animation(
@@ -346,7 +360,7 @@ class FanMenuScene {
         let node = Group(contents: contents)
         node.opacity = 0.0
         
-        node.onTouchPressed { _ in
+        node.onTouchPressed { [unowned fanMenu] _ in
             fanMenu.onItemWillClick?(button)
             
             fanMenu.scene?.updateState(open: false) {
