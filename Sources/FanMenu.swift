@@ -302,40 +302,40 @@ class FanMenuScene {
                 switch button.titlePosition {
                 case .right:
                     place = Transform.move(
-                        dx: Double(uiImage.size.width) + fanMenu.buttonsTitleIndent,
-                        dy: -Double(uiImage.size.height) / 2
+                        dx: Double(uiImage.size.width) / 2 + fanMenu.buttonsTitleIndent,
+                        dy: -text.bounds.h / 2
                     )
 
-                    width = Double(uiImage.size.width) + fanMenu.buttonsTitleIndent + text.bounds.w
-                    height = max(Double(uiImage.size.height), text.bounds.h)
-                    origin = Point(x: -Double(uiImage.size.width) / 2, y: -Double(uiImage.size.height) / 2)
+                    width = fanMenu.radius * 2 + fanMenu.buttonsTitleIndent + text.bounds.w
+                    height = max(fanMenu.radius * 2, text.bounds.h)
+                    origin = Point(x: -fanMenu.radius, y: -fanMenu.radius)
                 case .left:
                     place = Transform.move(
                         dx: -fanMenu.radius / 2 - fanMenu.buttonsTitleIndent - text.bounds.w,
                         dy: -text.bounds.h / 2
                     )
 
-                    width = fanMenu.radius + fanMenu.buttonsTitleIndent + text.bounds.w + fanMenu.radius/2
-                    height = fanMenu.radius
-                    origin = Point(x: place.dx - fanMenu.radius/2, y: -fanMenu.radius / 2)
+                    width = fanMenu.radius * 2 + fanMenu.buttonsTitleIndent + text.bounds.w
+                    height = fanMenu.radius * 2
+                    origin = Point(x: place.dx - fanMenu.radius/2, y: -fanMenu.radius)
                 case .bottom:
                     place = Transform.move(
                         dx: -Double(uiImage.size.width) / 2,
-                        dy: Double(uiImage.size.height) + fanMenu.buttonsTitleIndent
+                        dy: Double(uiImage.size.height) / 2 + fanMenu.buttonsTitleIndent
                     )
 
-                    width = max(Double(uiImage.size.width), text.bounds.w)
-                    height = Double(uiImage.size.height) + fanMenu.buttonsTitleIndent + text.bounds.h
-                    origin = Point(x: -Double(uiImage.size.width) / 2, y: -Double(uiImage.size.height) / 2)
+                    width = max(fanMenu.radius * 2, text.bounds.w)
+                    height = fanMenu.radius * 2 + fanMenu.buttonsTitleIndent + text.bounds.h
+                    origin = Point(x: -fanMenu.radius, y: -fanMenu.radius)
                 case .top:
                     place = Transform.move(
                         dx: -Double(uiImage.size.width) / 2,
-                        dy: -Double(uiImage.size.height) - fanMenu.buttonsTitleIndent - text.bounds.h
+                        dy: -Double(uiImage.size.height) / 2 - fanMenu.buttonsTitleIndent - text.bounds.h
                     )
 
-                    width = max(Double(uiImage.size.width), text.bounds.w)
-                    height = Double(uiImage.size.height) + fanMenu.buttonsTitleIndent + text.bounds.h
-                    origin = Point(x: place.dx, y: place.dy)
+                    width = max(fanMenu.radius * 2, text.bounds.w)
+                    height = fanMenu.radius * 2 + fanMenu.buttonsTitleIndent + text.bounds.h
+                    origin = Point(x: -fanMenu.radius, y: place.dy - fanMenu.radius / 2)
                 }
 
                 if let textColor = button.titleColor {
