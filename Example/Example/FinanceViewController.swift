@@ -49,12 +49,12 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
                 color: Color(val: button.1),
                 title: "new",
                 titleColor: Color.black,
-                titlePosition: .left,
+                titlePosition: .top,
                 isTextOnSubstrate: true
             )
         }
         
-        fanMenu.menuRadius = 90.0
+        fanMenu.menuRadius = 110.0
         fanMenu.duration = 0.2
         fanMenu.delay = 0.05
         fanMenu.interval = (Double.pi, 2 * Double.pi)
