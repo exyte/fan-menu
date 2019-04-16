@@ -30,7 +30,7 @@ class MainController: UIPageViewController, UIPageViewControllerDataSource {
     let mainStoryboard = UIStoryboard(name: "Main", bundle: .none)
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let index = controllers.index(of: viewController) else {
+        guard let index = controllers.firstIndex(of: viewController) else {
             return .none
         }
         
@@ -43,7 +43,7 @@ class MainController: UIPageViewController, UIPageViewControllerDataSource {
     
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let index = controllers.index(of: viewController) else {
+        guard let index = controllers.firstIndex(of: viewController) else {
             return .none
         }
         
@@ -64,7 +64,7 @@ class MainController: UIPageViewController, UIPageViewControllerDataSource {
             return 0
         }
         
-        guard let index = controllers.index(of: ctrl) else {
+        guard let index = controllers.firstIndex(of: ctrl) else {
             return 0
         }
         

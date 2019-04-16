@@ -187,7 +187,7 @@ class CustomButtonsScene {
     }
     
     func select(node: Node, alpha: Double, color: Int, customMenu: CustomMenu) {
-        let index = self.buttonsNode.contents.index(of: node)
+        let index = self.buttonsNode.contents.firstIndex(of: node)
         self.buttonsNode.contents.remove(at: index!)
         self.buttonsNode.contents.append(node)
         
