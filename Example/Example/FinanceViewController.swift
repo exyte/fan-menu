@@ -35,7 +35,6 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
             blue: CGFloat(242.0) / 255.0,
             alpha: 1.0
         )
-        tableView.tableFooterView = UIView()
         
         fanMenu.button = FanMenuButton(
             id: "main",
@@ -86,10 +85,6 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return isIphoneSE() ? 63 : 90
     }
 }
 
