@@ -7,6 +7,7 @@ class ShopViewController: UIViewController {
     
     @IBOutlet weak var fanMenu: FanMenu!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet var itemWidthConstraint: [NSLayoutConstraint]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,10 @@ class ShopViewController: UIViewController {
         }
         
         fanMenu.backgroundColor = .clear
+        
+        for constraint in itemWidthConstraint {
+            constraint.constant = (UIScreen.main.bounds.size.width - 15 - 15 - 15) / 2.0
+        }
     }
     
     func showView() {

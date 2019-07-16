@@ -71,3 +71,7 @@ class MainController: UIPageViewController, UIPageViewControllerDataSource {
         return index
     }
 }
+
+func isIphoneSE() -> Bool {
+    return UIScreen.main.bounds.height == 568.0
+}

@@ -6,6 +6,7 @@ import FanMenu
 class TaskViewController: UIViewController {
     @IBOutlet weak var fanMenu: FanMenu!
     @IBOutlet weak var colorLabel: UILabel!
+    @IBOutlet var itemHeightConstraint: [NSLayoutConstraint]!
     
     let colors = [0x231FE4, 0x00BFB6, 0xFFC43D, 0xFF5F3D, 0xF34766]
     
@@ -42,6 +43,10 @@ class TaskViewController: UIViewController {
         fanMenu.transform = CGAffineTransform(rotationAngle: CGFloat(3 * Double.pi/2.0))
         
         fanMenu.backgroundColor = .clear
+        
+        for constraint in itemHeightConstraint {
+            constraint.constant = isIphoneSE() ? 30 : 68
+        }
     }
     
     func hideTitle() {
