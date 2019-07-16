@@ -36,6 +36,7 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
             blue: CGFloat(242.0) / 255.0,
             alpha: 1.0
         )
+        tableView.tableFooterView = UIView()
         
         fanMenu.button = FanMenuButton(
             id: "main",
