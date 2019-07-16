@@ -143,6 +143,11 @@ public class FanMenu: MacawView {
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         return findNodeAt(location: point) != nil
     }
+    
+    fileprivate var sizeIsTooSmall: Bool {
+        let minSize = CGFloat((menuRadius + radius) * 2.0)
+        return bounds.size.width < minSize || bounds.size.height < minSize
+    }
 }
 
 class FanMenuScene {
@@ -227,6 +232,10 @@ class FanMenuScene {
         }
 
         isOpen = open
+        
+        if isOpen && fanMenu.sizeIsTooSmall {
+            print("WARNING: FanMenu doesn't fit into view bounds. It should be at least \((fanMenu.menuRadius + fanMenu.radius) * 2.0) wide and in high")
+        }
         
         let scale = isOpen ? fanMenu.menuRadius / fanMenu.radius : fanMenu.radius / fanMenu.menuRadius
         let backgroundAnimation = self.backgroundCircle.placeVar.animation(
