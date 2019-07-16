@@ -3,6 +3,16 @@ import UIKit
 import FanMenu
 import Macaw
 
+class HidingLabel: UILabel {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        if bounds.size.width < intrinsicContentSize.width {
+            frame = CGRect.zero
+        }
+    }
+}
+
 class ShopViewController: UIViewController {
     
     @IBOutlet weak var fanMenu: FanMenu!
@@ -44,6 +54,7 @@ class ShopViewController: UIViewController {
     }
     
     func showView() {
+        self.view.bringSubviewToFront(topView)
         let newValue: CGFloat = self.topView.alpha == 0.0 ? 1.0 : 0.0
         UIView.animate(withDuration: 0.35, animations: {
             self.topView.alpha = newValue

@@ -29,6 +29,7 @@ class FinanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         tableView.separatorColor = UIColor(
             red: CGFloat(211.0) / 255.0,
             green: CGFloat(223.0) / 255.0,
