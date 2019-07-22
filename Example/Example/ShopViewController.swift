@@ -55,6 +55,7 @@ class ShopViewController: UIViewController {
     
     func showView() {
         self.view.bringSubviewToFront(topView)
+        self.view.bringSubviewToFront(fanMenu)
         let newValue: CGFloat = self.topView.alpha == 0.0 ? 1.0 : 0.0
         UIView.animate(withDuration: 0.35, animations: {
             self.topView.alpha = newValue
