@@ -1,5 +1,5 @@
-<img src="https://github.com/exyte/fan-menu/blob/new_read_me/header.png">
-<img align="right" src="https://github.com/exyte/fan-menu/blob/new_read_me/demo.gif" width="480" height="360" />
+<img src="https://github.com/exyte/fan-menu/blob/master/header.png">
+<img align="right" src="https://github.com/exyte/fan-menu/blob/master/demo.gif" width="480" height="360" />
 
 <p><h1 align="left">FanMenu</h1></p>
 
