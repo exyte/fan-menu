@@ -3,14 +3,12 @@
 
 <p><h1 align="left">FanMenu</h1></p>
 
-<p><h4>Menu with a circular layout based on Macaw.</h4></p>
+<p><h4>Easily customizable floating circle menu created with [Macaw](https://github.com/exyte/Macaw)</h4></p>
 
 ___
 
-<p>We are a team of designers and full-stack 
-programming experts with deep knowledge 
-of UX/UI design, mobile development, AR/VR, 
-blockchain and other exciting technologies.</p>
+<p> We are a development agency building
+  [phenomenal](https://clutch.co/profile/exyte#review-731233) apps.</p>
 
 </br>
 
