@@ -117,13 +117,13 @@ Inspired by [Tice](https://dribbble.com/Tice).
 *CocoaPods*
 
 ```ruby
-pod "FanMenu"
+pod 'FanMenu'
 ```
 
 *Carthage*
 
 ```ogdl
-github "Exyte/fan-menu"
+github 'Exyte/fan-menu'
 ```
 
 *Manually*
@@ -132,5 +132,5 @@ Drop [FanMenu.swift](https://github.com/exyte/fan-menu/blob/master/Sources/FanMe
 
 ## Requirements
 
-* iOS 8.0+ / Mac OS X 10.9+
+* iOS 8.0+ / macOS 10.9+
 * Xcode 8.0+
