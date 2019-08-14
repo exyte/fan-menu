@@ -3,12 +3,12 @@
 
 <p><h1 align="left">FanMenu</h1></p>
 
-<p><h4>Easily customizable floating circle menu created with [Macaw](https://github.com/exyte/Macaw)</h4></p>
+<p><h4>Easily customizable floating circle menu created with <a href="https://github.com/exyte/Macaw">Macaw</a></h4></p>
 
 ___
 
 <p> We are a development agency building
-  [phenomenal](https://clutch.co/profile/exyte#review-731233) apps.</p>
+  <a href="https://clutch.co/profile/exyte#review-731233">phenomenal</a> apps.</p>
 
 </br>
 
