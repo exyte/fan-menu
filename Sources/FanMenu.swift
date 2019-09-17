@@ -359,7 +359,7 @@ class FanMenuScene {
             // full circle
             step = interval / size
         } else {
-            step = interval / (size - 1)
+            step = interval / max(size - 1, 1)
         }
         
         let alpha = startValue + step * Double(index)
