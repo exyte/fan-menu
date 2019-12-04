@@ -9,12 +9,12 @@ before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
 before_script:
-- carthage bootstrap
+- carthage bootstrap --platform iOS
 before_deploy:
-- carthage build
+- carthage build --platform iOS
 
 script:
-- set -o pipefail && xcodebuild test -project FanMenu.xcodeproj -scheme 'FanMenu' -sdk iphonesimulator13.2 ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator,OS=13.2.2,name=iPhone 11 Pro' | xcpretty;
+- set -o pipefail && xcodebuild -project FanMenu.xcodeproj -scheme 'FanMenu' -sdk iphonesimulator13.2 ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator,OS=13.2.2,name=iPhone 11 Pro' | xcpretty;
 
 notifications:
     slack: exyte:kdo9FNtTOFMuMqAyyvZPDAD7
