@@ -14,7 +14,7 @@ before_deploy:
 - carthage build
 
 script:
-- set -o pipefail && xcodebuild test -project FanMenu.xcodeproj -scheme 'FanMenu' -sdk iphonesimulator13.2 ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator, id=27C7EACC-2734-4B3B-AC85-99CAE16C201D, OS=13.2.2, name=iPhone 11 Pro' | xcpretty;
+- set -o pipefail && xcodebuild test -project FanMenu.xcodeproj -scheme 'FanMenu' -sdk iphonesimulator13.2 ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator,OS=13.2.2,name=iPhone 11 Pro' | xcpretty;
 
 notifications:
     slack: exyte:kdo9FNtTOFMuMqAyyvZPDAD7
