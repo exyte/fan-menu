@@ -28,36 +28,36 @@ ___
 3. Set the button
 ```swift
 fanMenu.button = FanMenuButton(
-  id: "main",
-  image: "plus",
-  color: Color(val: 0x7C93FE)
+    id: "main",
+    image: "plus",
+    color: Color(val: 0x7C93FE)
 )
 ```
 4. Set menu items
 ```swift
 fanMenu.items = [
-  FanMenuButton(
-    id: "exchange_id",
-    image: "exchange",
-    color: Color(val: 0x9F85FF)
-  ),
-  ...
-  FanMenuButton(
-    id: "visa_id",
-    image: "visa",
-    color: Color(val: 0xF55B58)
-  )
+    FanMenuButton(
+        id: "exchange_id",
+        image: "exchange",
+        color: Color(val: 0x9F85FF)
+    ),
+    ...
+    FanMenuButton(
+        id: "visa_id",
+        image: "visa",
+        color: Color(val: 0xF55B58)
+    )
 ]
 ```
 5. Add an event handler
 ```swift
 // call before animation
 fanMenu.onItemDidClick = { button in
-  print("ItemDidClick: \(button.id)")
+    print("ItemDidClick: \(button.id)")
 }
 // call after animation
 fanMenu.onItemWillClick = { button in
-  print("ItemWillClick: \(button.id)")
+    print("ItemWillClick: \(button.id)")
 }
 ```
 6. Configure optional parameters
@@ -114,23 +114,23 @@ Inspired by [Tice](https://dribbble.com/Tice).
 
 ## Installation
 
-*CocoaPods*
+### CocoaPods
 
 ```ruby
 pod 'FanMenu'
 ```
 
-*Carthage*
+### Carthage
 
 ```ogdl
 github 'Exyte/fan-menu'
 ```
 
-*Manually*
+### Manually
 
 Drop [FanMenu.swift](https://github.com/exyte/fan-menu/blob/master/Sources/FanMenu.swift) into your project.
 
 ## Requirements
 
-* iOS 8.0+ / macOS 10.9+
-* Xcode 8.0+
+* iOS 9.0+ / macOS 10.12+
+* Xcode 10.2+
