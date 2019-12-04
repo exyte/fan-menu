@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "FanMenu"
-  s.version          = "0.7.3"
+  s.version          = "0.7.4"
   s.summary          = "Menu with a circular layout based on Macaw."
 
   s.homepage         = 'https://github.com/exyte/fan-menu.git'
