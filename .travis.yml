@@ -1,0 +1,20 @@
+language: swift
+osx_image: xcode11.2
+
+branches:
+    only:
+    - master
+
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+before_script:
+- carthage bootstrap
+before_deploy:
+- carthage build
+
+script:
+- set -o pipefail && xcodebuild test -project FanMenu.xcodeproj -scheme 'FanMenu' -sdk iphonesimulator13.2 ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator,OS=13.2' | xcpretty;
+
+notifications:
+    slack: exyte:kdo9FNtTOFMuMqAyyvZPDAD7
