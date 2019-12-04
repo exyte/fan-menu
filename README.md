@@ -96,10 +96,10 @@ All source code is located in one single file called FanMenu.swift. To modify th
 ## Examples
 
 To try out the FanMenu examples:
-- Clone the repo `git@github.com:exyte/fan-menu.git`
-- Open terminal and run `cd <FanMenuRepo>/Example/`
+- Clone the repo `git clone git@github.com:exyte/fan-menu.git`
+- Open terminal and run `cd <FanMenuRepo>/Example`
 - Run `pod install` to install all dependencies
-- Run `open FanMenu.xcworkspace/` to open project in the Xcode
+- Run `xed .` to open project in the Xcode
 - Try it!
 
 We have the following examples:
