@@ -3,16 +3,16 @@
 import PackageDescription
 
 let package = Package(
-	name: "FanMenu",
-	platforms: [
-		.macOS(.v10_12),
+    name: "FanMenu",
+    platforms: [
+        .macOS(.v10_12),
         .iOS(.v9)
     ],
     products: [
-    	.library(
-    		name: "FanMenu",
-    		targets: ["FanMenu"]
-    	)
+        .library(
+            name: "FanMenu",
+            targets: ["FanMenu"]
+        )
     ],
     dependencies: [
         .package(
@@ -21,8 +21,8 @@ let package = Package(
         )
     ],
     targets: [
-    	.target(
-    		name: "FanMenu",
+        .target(
+            name: "FanMenu",
             dependencies: ["Macaw"],
             path: "Sources"
         )
