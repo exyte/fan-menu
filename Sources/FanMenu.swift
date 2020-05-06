@@ -234,7 +234,7 @@ class FanMenuScene {
         isOpen = open
         
         if isOpen && fanMenu.sizeIsTooSmall {
-            print("WARNING: FanMenu doesn't fit into view bounds. It should be at least \((fanMenu.menuRadius + fanMenu.radius) * 2.0) wide and in high")
+            print("WARNING: FanMenu doesn't fit into view bounds. It should have both width and height set to at least \((fanMenu.menuRadius + fanMenu.radius) * 2.0)")
         }
         
         let scale = isOpen ? fanMenu.menuRadius / fanMenu.radius : fanMenu.radius / fanMenu.menuRadius
