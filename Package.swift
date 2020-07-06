@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/exyte/Macaw",
-            from: "0.9.6"
+            .branch("master")
         )
     ],
     targets: [
