@@ -24,11 +24,11 @@ class CustomMenu: MacawView {
     let duration = 0.35
     
     let items = [
-        ("exchange","custom_twitter", 0x059FF5),
-        ("visa", "custom_whatsup", 0x4ECD5E),
-        ("wallet", "custom_telegram", 0x27A2E1),
-        ("visa", "custom_copylink", 0x595A6C),
-        ("money_box", "custom_facebook", 0x39579A)
+        ("twitter","custom_twitter", 0x059FF5),
+        ("whatsup", "custom_whatsup", 0x4ECD5E),
+        ("telegram", "custom_telegram", 0x27A2E1),
+        ("copylink", "custom_copylink", 0x595A6C),
+        ("facebook", "custom_facebook", 0x39579A)
     ]
     
     var onSharePressed: ((_ id: String) -> ())?

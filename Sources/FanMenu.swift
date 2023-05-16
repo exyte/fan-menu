@@ -13,6 +13,8 @@ public struct FanMenuButton {
     public let image: UIImage?
     public let color: Color
     public let title: String
+    public let titleFont: UIFont
+    public let titleWeight: UIFont.Weight
     public let titleColor: Color?
     public let titlePosition: FanMenuButtonTitlePosition
     
@@ -20,12 +22,16 @@ public struct FanMenuButton {
                 image: UIImage?,
                 color: Color,
                 title: String = "",
+                titleFont: UIFont = .preferredFont(forTextStyle: .title1),
+                titleWeight: UIFont.Weight = .regular,
                 titleColor: Color? = .none,
                 titlePosition: FanMenuButtonTitlePosition = .bottom) {
         self.id = id
         self.image = image
         self.color = color
         self.title = title
+        self.titleFont = titleFont
+        self.titleWeight = titleWeight
         self.titleColor = titleColor
         self.titlePosition = titlePosition
     }
@@ -34,12 +40,16 @@ public struct FanMenuButton {
                 image: String,
                 color: Color,
                 title: String = "",
+                titleFont: UIFont = .preferredFont(forTextStyle: .title1),
+                titleWeight: UIFont.Weight = .regular,
                 titleColor: Color? = .none,
                 titlePosition: FanMenuButtonTitlePosition = .bottom) {
         self.init(id: id,
                   image: UIImage(named: image),
                   color: color,
                   title: title,
+                  titleFont: titleFont,
+                  titleWeight: titleWeight,
                   titleColor: titleColor,
                   titlePosition: titlePosition)
     }
@@ -298,7 +308,7 @@ class FanMenuScene {
 
                 let place: Transform
 
-                let text = Text(text: button.title)
+                let text = Text(text: button.title, font: Font(name: button.titleFont.fontName, size: Int(button.titleFont.pointSize), weight: getWeight(button.titleWeight)))
 
                 switch button.titlePosition {
                 case .right:
@@ -347,7 +357,22 @@ class FanMenuScene {
         }
         return node
     }
-    
+
+    class func getWeight(_ weight: UIFont.Weight) -> String {
+        switch weight {
+        case .regular:
+            return "normal"
+        case .bold:
+            return "bold"
+        case .semibold:
+            return "bolder"
+        case .light:
+            return "lighter"
+        default:
+            return "normal"
+        }
+    }
+
     func expandPlace(index: Int) -> Transform {
         let size = Double(buttonsNode.contents.count)
         let endValue = fanMenu.interval.1
