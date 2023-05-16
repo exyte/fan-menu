@@ -15,7 +15,6 @@ ___
 <a href="https://exyte.com/contacts"><img src="https://i.imgur.com/vGjsQPt.png" width="134" height="34"></a> <a href="https://twitter.com/exyteHQ"><img src="https://i.imgur.com/DngwSn1.png" width="165" height="34"></a>
 
 </br></br>
-[![Travis CI](https://travis-ci.org/exyte/fan-menu.svg?branch=master)](https://travis-ci.org/exyte/fan-menu)
 [![Version](https://img.shields.io/cocoapods/v/FanMenu.svg?style=flat)](http://cocoapods.org/pods/FanMenu)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-0473B3.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/FanMenu.svg?style=flat)](http://cocoapods.org/pods/FanMenu)
